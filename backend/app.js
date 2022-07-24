@@ -1,17 +1,23 @@
 const express = require('express')
-const app = new express()
+const app = express()
+const adminRouter=require('./routes/adminRoute')
+const trainerRouter=require('./routes/trainerRoute')
+
+
+const bodyParser=require('body-parser')
+const cors = require('cors')
+
+
+app.use(cors())
+app.use(bodyParser.json())
+app.use('/admin',adminRouter)
+app.use('/trainer',trainerRouter)
 
 
 
 
-app.get('',(req,res)=>{
-    res.send('Backend SERver LMS')
+
+
+app.listen(process.env.PORT || 3000,(req,res)=>{
+    console.log('listenning to port 3000');
 })
-
-
-
-
-
-app.listen(5000,(()=>{
-    console.log('Server Running In port 5000');
-}))
