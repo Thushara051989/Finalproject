@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const adminRouter=require('./routes/adminRoute')
 const trainerRouter=require('./routes/trainerRoute')
+const studentRouter=require('./routes/studentRoute')
 
 
 const bodyParser=require('body-parser')
@@ -12,6 +13,7 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use('/admin',adminRouter)
 app.use('/trainer',trainerRouter)
+app.use('/student',studentRouter)
 
 
 

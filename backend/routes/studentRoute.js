@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const trainerModel=require('../src/model/trainerModel')
+const studentModel=require('../src/model/studentModel')
 
 
 router.post('/',async(req,res)=>{
@@ -10,16 +10,19 @@ router.post('/',async(req,res)=>{
             res.header("Access-Control-Allow-Origin","*")
             res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
     
-            const trainerMod=new trainerModel({
-                Tuser:req.body.Tuser,
-                Tpassword:req.body.Tpassword
+            const studentMod=new studentModel({
+                Sfirstname:req.body.Sfirstname,
+                Slastname:req.body.Slastname,
+                Scourse:req.body.Scourse,
+                Semail:req.body.Semail,
+                Spassword:req.body.Spassword
             })
-            await trainerMod.save()
+            await studentMod.save()
     
             res.json({
     
                 success:1,
-                message:'trainer successfuly saved'
+                message:'student successfuly saved'
     
             })
     
@@ -39,11 +42,11 @@ router.post('/',async(req,res)=>{
         try{
             res.header("Access-Control-Allow-Origin","*")
             res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
-            let alltrainer=await trainerModel.find()
+            let allstudent=await studentModel.find()
             res.json({
                 success:1,
-                message:'trainer listed succesfuly',
-                item:alltrainer
+                message:'student listed succesfuly',
+                item:allstudent
             })
         }
         catch(err){
