@@ -5,7 +5,7 @@
                 <mat-card class="login-card">
                     <form [formGroup]="signUpForm" (ngSubmit)="onSign()">
                         <mat-form-field appearance="outline">
-                            <mat-label>firstname</mat-label>
+                            <mat-label>Firstname</mat-label>
                             <input matInput placeholder="firstName" formControlName="Sfirstname">
                             <mat-error *ngIf="signControls?.Sfirstname?.errors?.required&&signSubmit">Firstname required
                             </mat-error>
@@ -32,6 +32,9 @@
                             <input matInput placeholder="Email" formControlName="Semail" type="email">
                             <mat-error *ngIf="signControls?.Semail?.errors?.required&&signSubmit">Email required
                             </mat-error>
+                            <mat-error *ngIf="signControls?.Semail?.errors?.['pattern']&&signSubmit">Email invalid
+                            </mat-error>
+                            
                         </mat-form-field>
 
                         <mat-form-field appearance="outline">
@@ -41,7 +44,7 @@
                             
                             <mat-error *ngIf="signControls?.Spassword?.errors?.required&&signSubmit">password required
                             </mat-error>
-                            <mat-error *ngIf="signControls?.Spassword?.errors?.minLength&&signSubmit">min length required
+                            <mat-error *ngIf="signControls?.Spassword?.errors?.['minLength']&&signSubmit">min length required
                             </mat-error>
                         </mat-form-field>
                         <mat-form-field appearance="outline">
