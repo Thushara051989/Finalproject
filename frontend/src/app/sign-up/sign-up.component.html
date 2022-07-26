@@ -37,11 +37,8 @@
                         <mat-form-field appearance="outline">
                             <mat-label>Password</mat-label>
                             <input matInput placeholder="Password" formControlName="Spassword"
-                                [type]="signHide?'password':'text'">
-                            <button mat-icon-button matSuffix (click)="signHide =!signHide"
-                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="signHide">
-                                <mat-icon>{{signHide? 'visibility_off' : 'visibility'}}</mat-icon>
-                            </button>
+                                type="password">
+                            
                             <mat-error *ngIf="signControls?.Spassword?.errors?.required&&signSubmit">password required
                             </mat-error>
                             <mat-error *ngIf="signControls?.Spassword?.errors?.minLength&&signSubmit">min length required
@@ -50,11 +47,8 @@
                         <mat-form-field appearance="outline">
                             <mat-label>Confirm Password</mat-label>
                             <input matInput placeholder="ConfirmPassword" formControlName="ConfirmPass"
-                                [type]="signHide?'password':'text'">
-                            <button mat-icon-button matSuffix (click)="signHide = !signHide"
-                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="signHide">
-                                <mat-icon>{{signHide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                            </button>
+                                type="password">
+                            
                             <mat-error *ngIf="signControls?.ConfirmPass?.errors?.required&&signSubmit">password required
                             </mat-error>
                             <mat-error *ngIf="signControls?.ConfirmPass?.errors?.passMisMatch&&signSubmit">password
