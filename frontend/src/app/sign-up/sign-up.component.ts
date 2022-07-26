@@ -33,7 +33,7 @@ export class SignUpComponent implements OnInit {
 
     Sfirstname:['',Validators.required],
     Slastname:['',Validators.required],
-    Semail:['',[Validators.required,Validators.email]],
+    Semail:['',[Validators.required,Validators.email,Validators.pattern('^[a-z0-9,%+]+@[a-z0-9.-]+\.[a-z]{2,4}$')]],
     Scourse:[,Validators.required],
     Spassword:['',[Validators.required,Validators.minLength(6)]],
     ConfirmPass:['',[Validators.required,Validators.minLength(6)]]
