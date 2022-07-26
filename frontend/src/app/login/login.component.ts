@@ -19,4 +19,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  // loginUser(){
+  //   this.auth.getAdmin(this.user).subscribe((res)=>{
+      
+  //   })
+  // }
 }

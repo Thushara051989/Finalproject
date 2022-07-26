@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,16 +11,17 @@ import { FormBuilder,Validators} from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private auth:AuthService,private router:Router,private toast:ToastrService) { }
 
   ngOnInit() {
   }
-  signHide=false
+  signHide=true
   signSubmit=true
+  submitted=false
   course=[
-    {id:1,name:'Mean Stack'},
-    {id:2,name:'Block Chain'},
-    {id:3,name:'Mern Stack'},
+    {name:'Mean Stack'},
+    {name:'Block Chain'},
+    {name:'Mern Stack'},
   ]
   get signControls(){
     return this.signUpForm.controls
@@ -27,16 +31,16 @@ export class SignUpComponent implements OnInit {
 
   signUpForm=this.fb.group({
 
-    firstName:['',Validators.required],
-    lastName:['',Validators.required],
-    email:['',[Validators.required,Validators.email]],
-    course:[,Validators.required],
-    passWord:['',[Validators.required,Validators.minLength(6)]],
+    Sfirstname:['',Validators.required],
+    Slastname:['',Validators.required],
+    Semail:['',[Validators.required,Validators.email]],
+    Scourse:[,Validators.required],
+    Spassword:['',[Validators.required,Validators.minLength(6)]],
     ConfirmPass:['',[Validators.required,Validators.minLength(6)]]
 },
 {
   validators:()=>{
-    if(this.signUpForm?.controls?.passWord.value!=this.signUpForm?.controls?.ConfirmPass.value){
+    if(this.signUpForm?.controls?.Spassword.value!=this.signUpForm?.controls?.ConfirmPass.value){
       console.log('hello');
       this.signUpForm.controls.ConfirmPass.setErrors({passMisMatch:true})
     }
@@ -45,9 +49,17 @@ export class SignUpComponent implements OnInit {
   }
 }
 )
-onSign(data:any){
-  this.signSubmit=true
-  console.log(data);
+
+
+onSign(){
+
+  
+   this.auth.postStudent(this.signUpForm.value).subscribe((res)=>{ 
+    console.log(res);
+    this.toast.success('Registration  SuccessFull','Success')
+    
+   this.router.navigate([''])
+   })
   
 
 }
