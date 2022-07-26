@@ -9,9 +9,10 @@ div.container
 {
     font-family: Raleway;
     margin: 0 auto;
+    width: 100%;
     padding: 3em 3em;
-    /* padding-left: 30em; */
     text-align: center;
+    
 }
 
 div.container a
