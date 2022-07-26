@@ -8,7 +8,7 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  getAdmin(user:any){
+  getAdmin(){
     return this.http.get<any>('http://localhost:3000/admin')
   }
 
@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   postStudent(data:any){
-    return this.http.post<any>('http://localhost:3000/student',data)
+    return this.http.post<any>('http://localhost:3000/student',{data})
   }
 
   getStudent(){

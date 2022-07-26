@@ -11,11 +11,11 @@ router.post('/',async(req,res)=>{
             res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
     
             const studentMod=new studentModel({
-                Sfirstname:req.body.Sfirstname,
-                Slastname:req.body.Slastname,
-                Scourse:req.body.Scourse,
-                Semail:req.body.Semail,
-                Spassword:req.body.Spassword
+                Sfirstname:req.body.data.Sfirstname,
+                Slastname:req.body.data.Slastname,
+                Scourse:req.body.data.Scourse,
+                Semail:req.body.data.Semail,
+                Spassword:req.body.data.Spassword
             })
             await studentMod.save()
     

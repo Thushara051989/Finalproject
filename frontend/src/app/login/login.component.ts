@@ -20,9 +20,9 @@ export class LoginComponent implements OnInit {
   }
 
 
-  loginUser(){
-    this.auth.getAdmin(this.user).subscribe((res)=>{
+  // loginUser(){
+  //   this.auth.getAdmin(this.user).subscribe((res)=>{
       
-    })
-  }
+  //   })
+  // }
 }
