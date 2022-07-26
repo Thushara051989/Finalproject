@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ToastrModule } from 'ngx-toastr';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ToastrModule } from 'ngx-toastr';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
