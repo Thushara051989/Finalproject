@@ -1,15 +1,9 @@
 .div{
-    background-image: url("https://static.vecteezy.com/system/resources/previews/000/597/784/original/network-line-shapes-background-vector-background.jpg");
     text-align: center;
     max-width: 100%;
-	background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
 }
 
 nav {
-    padding: 1%;
     overflow: hidden;
   }
   
@@ -32,10 +26,4 @@ nav ul {
 nav a:hover {
   background-color: #ddd;
   color: black;
-}
-
-nav .material-icons {
-  display: none;
-  font-size: 36px;
-  color: blue;
 }
