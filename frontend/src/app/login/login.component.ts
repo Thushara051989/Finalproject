@@ -20,9 +20,18 @@ export class LoginComponent implements OnInit {
   }
 
 
-  // loginUser(){
-  //   this.auth.getAdmin(this.user).subscribe((res)=>{
+
+   loginUser(){
+    this.auth.getStudent().subscribe((res)=>{
+
+      console.log(res);
       
-  //   })
-  // }
+      // const user=res.find((a:any)=>{
+      //   return a.email === this.user.useremail. && a.password === this.user.password
+      // })
+      // // if(user){
+      // //   alert('login SUccessfull')
+      // // }
+    })
+  }
 }

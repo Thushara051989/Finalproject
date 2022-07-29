@@ -23,8 +23,16 @@ export class SignUpComponent implements OnInit {
     {name:'Block Chain'},
     {name:'Mern Stack'},
   ]
+isProcessing=false
+message:string='hello world'
+className='d-none'
+
   get signControls(){
     return this.signUpForm.controls
+  }
+
+  getClassName(){
+    return this.className
   }
 
 
@@ -53,13 +61,32 @@ export class SignUpComponent implements OnInit {
 
 onSign(){
 
+  this.isProcessing=true
+  const formData=this.signUpForm.value
+
   
-   this.auth.postStudent(this.signUpForm.value).subscribe((res)=>{ 
+   this.auth.postStudent(formData).subscribe((res)=>{ 
     console.log(res);
-    this.toast.success('Registration  SuccessFull','Success')
+    if(res.success){
     
-   this.router.navigate([''])
-   })
+    this.isProcessing=false
+    this.toast.success('Registration  SuccessFull','Success')
+    this.router.navigate([''])
+  }
+  else{
+    this.isProcessing=false
+    this.message=res.message
+    this.className='alert alert-danger'
+
+  }
+   },
+   err=>{
+    this.isProcessing=false
+    this.message='server error'
+    this.className='alert alert-danger'
+   }
+   
+    )
   
 
 }
