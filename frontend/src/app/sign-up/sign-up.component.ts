@@ -71,7 +71,7 @@ onSign(){
     
     this.isProcessing=false
     this.toast.success('Registration  SuccessFull','Success')
-    // this.router.navigate([''])
+    this.router.navigate(['/login'])
   }
   else{
     this.isProcessing=false
