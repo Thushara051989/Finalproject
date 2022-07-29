@@ -1,40 +1,70 @@
 const express = require('express')
 const router = express.Router()
 const studentModel=require('../src/model/studentModel')
+const bcrypt=require('bcrypt')
 
 
-router.post('/',async(req,res)=>{
+router.post('/',(req,res)=>{
    
     console.log('body',req.body);
         
             res.header("Access-Control-Allow-Origin","*")
             res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
+
+            bcrypt.hash(req.body.data.Spassword,10,(err,hash)=>{
+                if (err){
+                    return res.json({
     
-            const studentMod=new studentModel({
-                Sfirstname:req.body.Sfirstname,
-                Slastname:req.body.Slastname,
-                Scourse:req.body.Scourse,
-                Semail:req.body.Semail,
-                Spassword:req.body.Spassword
+                        success:0,
+                        message:'Hashing iss'
+            
+                    })
+                }
+                else{
+                    const studentMod=new studentModel({
+                        Sfirstname:req.body.data.Sfirstname,
+                        Slastname:req.body.data.Slastname,
+                        Scourse:req.body.data.Scourse,
+                        Semail:req.body.data.Semail,
+                        Spassword:hash
+                    })
+                     studentMod.save()
+                    .then((_)=>{
+                        res.json({
+                
+                            success:1,
+                            message:'student Account create successfully'
+                
+                        })
+                    })
+                    .catch((err)=>{
+                        if(err.code === 11000){
+                            return res.json({
+                                success:0,
+                                message:'Email Already Exists' 
+                            })
+                        }
+                        res.json({
+                            success:0,
+                            message:'Auth Failed'
+                        })
+                
+                    })
+
+
+
+
+
+
+                }
             })
-            await studentMod.save()
-            .then((_)=>{
-            res.json({
-    
-                success:1,
-                message:'student successfuly saved'
-    
-            })
-        })
+
+            
+            
+            
     
         
-        .catch((err)=>{
-            res.json({
-                success:0,
-                message:'error occuured while saving'+err
-            })
-    
-        })
+        
     })
     
     
