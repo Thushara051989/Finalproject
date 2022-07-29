@@ -11,7 +11,7 @@ router.post('/',(req,res)=>{
             res.header("Access-Control-Allow-Origin","*")
             res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
 
-            bcrypt.hash(req.body.data.Spassword,10,(err,hash)=>{
+            bcrypt.hash(req.body.data.password,10,(err,hash)=>{
                 if (err){
                     return res.json({
     
@@ -22,11 +22,11 @@ router.post('/',(req,res)=>{
                 }
                 else{
                     const studentMod=new studentModel({
-                        Sfirstname:req.body.data.Sfirstname,
-                        Slastname:req.body.data.Slastname,
-                        Scourse:req.body.data.Scourse,
-                        Semail:req.body.data.Semail,
-                        Spassword:hash
+                        firstname:req.body.data.firstname,
+                        lastname:req.body.data.lastname,
+                        course:req.body.data.course,
+                        email:req.body.data.email,
+                        password:hash
                     })
                      studentMod.save()
                     .then((_)=>{

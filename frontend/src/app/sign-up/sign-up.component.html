@@ -7,33 +7,33 @@
                     <form [formGroup]="signUpForm" (ngSubmit)="onSign()">
                         <mat-form-field appearance="outline">
                             <mat-label>Firstname</mat-label>
-                            <input matInput placeholder="firstName" formControlName="Sfirstname">
-                            <mat-error *ngIf="signControls?.Sfirstname?.errors?.required&&signSubmit">Firstname required
+                            <input matInput placeholder="firstName" formControlName="firstname">
+                            <mat-error *ngIf="signControls?.firstname?.errors?.required&&signSubmit">Firstname required
                             </mat-error>
                         </mat-form-field>
                         <mat-form-field appearance="outline">
                             <mat-label>Lastname</mat-label>
-                            <input matInput placeholder="lastName" formControlName="Slastname">
-                            <mat-error *ngIf="signControls?.Slastname?.errors?.required&&signSubmit">lastname required
+                            <input matInput placeholder="lastName" formControlName="lastname">
+                            <mat-error *ngIf="signControls?.lastname?.errors?.required&&signSubmit">lastname required
                             </mat-error>
                         </mat-form-field>
                         <mat-form-field appearance="outline">
                             <mat-label>Course</mat-label>
-                            <mat-select placeholder="Course" formControlName="Scourse">
+                            <mat-select placeholder="Course" formControlName="course">
                               <mat-option *ngFor="let item of course" [value]="item.name">
                                 {{item.name}}
                               </mat-option>
                             </mat-select>
-                            <mat-error *ngIf="signControls?.Scourse?.errors?.required&&signSubmit">course required
+                            <mat-error *ngIf="signControls?.course?.errors?.required&&signSubmit">course required
                             </mat-error>
                           </mat-form-field>
                         <mat-form-field appearance="outline">
 
                             <mat-label>Email</mat-label>
-                            <input matInput placeholder="Email" formControlName="Semail" type="email">
-                            <mat-error *ngIf="signControls?.Semail?.errors?.required&&signSubmit">Email required
+                            <input matInput placeholder="Email" formControlName="email" type="email">
+                            <mat-error *ngIf="signControls?.email?.errors?.required&&signSubmit">Email required
                             </mat-error>
-                            <mat-error *ngIf="signControls?.Semail?.errors?.['pattern']&&signSubmit">Email invalid
+                            <mat-error *ngIf="signControls?.email?.errors?.['pattern']&&signSubmit">Email invalid
                             </mat-error>
                             <div [ngClass]="getClassName()">{{message}}</div>
                             
@@ -42,10 +42,10 @@
 
                         <mat-form-field appearance="outline">
                             <mat-label>Password</mat-label>
-                            <input matInput placeholder="Password" formControlName="Spassword"
+                            <input matInput placeholder="Password" formControlName="password"
                                 type="password">
                             
-                            <mat-error *ngIf="signControls?.Spassword?.errors?.required&&signSubmit">password required
+                            <mat-error *ngIf="signControls?.password?.errors?.required&&signSubmit">password required
                             </mat-error>
                             <mat-error *ngIf="signControls?.Spassword?.errors?.['minLength']&&signSubmit">min length required
                             </mat-error>

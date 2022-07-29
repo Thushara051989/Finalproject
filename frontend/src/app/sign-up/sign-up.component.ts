@@ -39,16 +39,16 @@ className='d-none'
 
   signUpForm=this.fb.group({
 
-    Sfirstname:['',Validators.required],
-    Slastname:['',Validators.required],
-    Semail:['',[Validators.required,Validators.email,Validators.pattern('^[a-z0-9,%+]+@[a-z0-9.-]+\.[a-z]{2,4}$')]],
-    Scourse:[,Validators.required],
-    Spassword:['',[Validators.required,Validators.minLength(6)]],
+    firstname:['',Validators.required],
+    lastname:['',Validators.required],
+    email:['',[Validators.required,Validators.email,Validators.pattern('^[a-z0-9,%+]+@[a-z0-9.-]+\.[a-z]{2,4}$')]],
+    course:[,Validators.required],
+    password:['',[Validators.required,Validators.minLength(6)]],
     ConfirmPass:['',[Validators.required,Validators.minLength(6)]]
 },
 {
   validators:()=>{
-    if(this.signUpForm?.controls?.Spassword.value!=this.signUpForm?.controls?.ConfirmPass.value){
+    if(this.signUpForm?.controls?.password.value!=this.signUpForm?.controls?.ConfirmPass.value){
       console.log('hello');
       this.signUpForm.controls.ConfirmPass.setErrors({passMisMatch:true})
     }
@@ -71,7 +71,7 @@ onSign(){
     
     this.isProcessing=false
     this.toast.success('Registration  SuccessFull','Success')
-    this.router.navigate([''])
+    // this.router.navigate([''])
   }
   else{
     this.isProcessing=false
