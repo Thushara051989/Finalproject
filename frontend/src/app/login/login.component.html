@@ -1,10 +1,10 @@
-<div class="bg-image">
+<!-- <div class="bg-image">
   <div class="center">
     <mat-tab-group style="border:1px solid;background: rgb(235, 247, 241);border-radius: 0.7rem;">
       <mat-tab id="lb" label="LOGIN">
         <mat-card class="login-card">
            <form #loginForm="ngForm" (ngSubmit)="loginForm.valid&&loginUser()">
-          <!-- <form data-aos="fade-up" #loginForm="ngForm" (ngSubmit)="loginForm.valid"> -->
+           <form data-aos="fade-up" #loginForm="ngForm" (ngSubmit)="loginForm.valid">
             <br>
             <br>
             <mat-form-field appearance="outline">
@@ -18,10 +18,10 @@
               <mat-label>Password</mat-label>
               <input matInput placeholder="12345" #password="ngModel" minlength="6" required name="password"
                 [(ngModel)]="user.password" type="password">
-              <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button> -->
+              </button>
               <mat-error *ngIf="loginForm.submitted&&password.errors?.['required']">Password required</mat-error>
               <mat-error *ngIf="loginForm.submitted&&password.errors?.['minlength']">Password minimum length is 6
               </mat-error>
@@ -32,4 +32,43 @@
           </form><br>
           <a routerLink="/signup">Create an Account?</a>
         </mat-card>
-      </mat-tab>
+      </mat-tab> -->
+
+
+
+      <div class="bg-image">
+        <div class="center">
+          <mat-tab-group style="border:1px solid;background: rgb(235, 247, 241);border-radius: 0.7rem;">
+            <mat-tab id="lb" label="LOGIN">
+              <mat-card class="login-card">
+                <form [formGroup]="signInform" (ngSubmit)="onsignIn()">
+                  <br>
+                  <br>
+
+                  <mat-form-field appearance="outline">
+
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email" type="email">
+                            <mat-error *ngIf="signInControls?.email?.errors?.required&&signSubmit">Email required
+                            </mat-error>
+                            <mat-error *ngIf="signInControls?.email?.errors?.['pattern']&&signSubmit">Email invalid
+                            </mat-error>
+                
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Password</mat-label>
+                          <input matInput placeholder="Password" formControlName="password"
+                              type="password">
+                          
+                          <mat-error *ngIf="signInControls?.password?.errors?.required&&signSubmit">password required
+                          </mat-error>
+                          <mat-error *ngIf="signInControls?.password?.errors?.['minLength']&&signSubmit">min length required
+                          </mat-error>
+                      </mat-form-field>
+                  <div style="text-align: center;">
+                    <button mat-raised-button color="primary" style="text-align:center">Login</button>
+                  </div>
+                </form><br>
+                <a routerLink="/signup">Create an Account?</a>
+              </mat-card>
+            </mat-tab>
