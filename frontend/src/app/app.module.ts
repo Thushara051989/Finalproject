@@ -21,6 +21,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { CoursesComponent } from './courses/courses.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { HeaderComponent } from './header/header.component';
     LoginComponent,
     SignUpComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
