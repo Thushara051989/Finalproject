@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../auth.service';
 
 
@@ -11,7 +12,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fb:FormBuilder,private auth:AuthService,private router:Router) { }
+  constructor(private fb:FormBuilder,private auth:AuthService,private router:Router,private toast:ToastrService) { }
 
   signSubmit=true
 
@@ -28,7 +29,24 @@ get signInControls(){
   ngOnInit() {
   }
 
-onsignIn(){
+onlogin(){
+  const data=this.signInform.value
+  this.auth.loginStudent(data).subscribe(res=>{
+    console.log({res});
+    
+    if(res.success){
+      localStorage.setItem('token',res.token)
+      this.toast.success(res.message,'Success')
+    this.router.navigate(['/profile'])
+    }
+    else{
+      this.toast.error(res.message,'failed')
+    }
+
+  },
+  err=>{
+    alert('login failed')
+  })
 
 }
 

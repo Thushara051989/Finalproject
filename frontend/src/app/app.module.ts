@@ -22,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { CoursesComponent } from './courses/courses.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { CoursesComponent } from './courses/courses.component';
     SignUpComponent,
     FooterComponent,
     HeaderComponent,
-    CoursesComponent
+    CoursesComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
