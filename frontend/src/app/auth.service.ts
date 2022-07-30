@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -8,20 +8,21 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  getAdmin(){
-    return this.http.get<any>('http://localhost:3000/admin')
-  }
-
-  getTrainer(){
-    return this.http.get<any>('http://localhost:3000/trainer')
-  }
+  
 
   postStudent(data:any){
-    return this.http.post<any>('http://localhost:3000/student',{data})
+    return this.http.post<any>('http://localhost:3000/student/signUp',{data})
   }
 
-  getStudent(){
-    return this.http.get<any>('http://localhost:3000/student')
+  loginStudent(data:any){
+    return this.http.post<any>('http://localhost:3000/student/login',{data})
+  }
+
+  getProfile(){
+    let headers={
+      'authorization':'Bearer '+localStorage.getItem('token')
+    }
+    return this.http.get<any>('http://localhost:3000/student/profile',{headers:headers})
   }
 
 }
