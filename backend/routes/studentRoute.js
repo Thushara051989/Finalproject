@@ -43,7 +43,7 @@ router.post('/signUp', (req, res) => {
                     if (err.code === 11000) {
                         return res.json({
                             success: 0,
-                            message: 'Email Already Exists'
+                            message: 'Account already Exist,Please login'
                         })
                     }
                     res.json({
