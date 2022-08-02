@@ -25,6 +25,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdmprofileComponent } from './admprofile/admprofile.component';
 import { TrnprofileComponent } from './trnprofile/trnprofile.component';
+import { CourseService } from './course.service';
 
 
 @NgModule({
@@ -56,7 +57,7 @@ import { TrnprofileComponent } from './trnprofile/trnprofile.component';
     FormsModule,
     ToastrModule.forRoot()
   ],
-  providers: [AuthService],
+  providers: [AuthService,CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

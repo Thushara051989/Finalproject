@@ -2,73 +2,16 @@
   <img src="assets/images/gurukul_yellow1.png" alt="logo">
 </div>
 <div class="main">
-  <ul class="cards">
+  <ul class="cards" *ngFor="let data of courseArray">
     <li class="cards_item">
       <div class="card">
-        <div class="card_image"><img src="assets\images\img1.jpg"></div>
+        <img class="card_image" [src]="data.image">
         <div class="card_content">
-          <h2 class="card_title">MEAN STACK</h2>
-          <p class="card_text">MEAN stack is JavaScript-based framework for developing web applications.MEAN is named
-            after MongoDB, Express, Angular, and Node.</p>
-          <button class="btn card_btn"><a routerLink="/courses">Read More</a></button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="assets\images\img2.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">MERN STACK</h2>
-          <p class="card_text">MERN Stack (MongoDB, Express, React.js, and Node.) is a Javascript Stack that is used for
-            easier and faster deployment of full-stack web applications.</p>
-          <button class="btn card_btn"><a routerLink="/courses">Read More</a></button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="assets\images\DS.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">Data Science</h2>
-          <p class="card_text">Data science is an interdisciplinary field that uses scientific methods, processes,
-            algorithms and systems to extract knowledge from data. </p>
-          <button class="btn card_btn"><a routerLink="/courses">Read More</a></button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="assets\images\img4.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">AI & Robotics</h2>
-          <p class="card_text">Artificial intelligence (AI) and robotics are a powerful combination for automating tasks
-            inside and outside of the factory setting. In recent years, AI has become an increasingly common presence in
-            robotic solutions & introducing flexibility in applications.</p>
-          <button class="btn card_btn"><a routerLink="/courses">Read More</a></button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="assets\images\img3.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">Digital Marketing</h2>
-          <p class="card_text">Digital marketing is the component of marketing that uses the Internet and online based
-            digital technologies such as desktop computers, mobile phones and other digital media and platforms to
-            promote products and services.</p>
-          <button class="btn card_btn"><a routerLink="/courses">Read More</a></button>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="assets\images\img5.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">Python</h2>
-          <p class="card_text">Python is a high-level, interpreted, general-purpose programming language. Its design
-            philosophy emphasizes code readability with the use of significant indentation. Python is dynamically-typed
-            and garbage-collected. </p>
-          <button class="btn card_btn"><a routerLink="/courses">Read More</a></button>
+          <h2 class="card_title">{{data.name}}</h2>
+          <h3 class="card_title">{{data.duration}}</h3>
+          <p class="card_text">{{data.description}}</p>
+          <button class="btn btn-outline-danger" (click)="apply()">Apply</button>
+          <!-- <button class="btn card_btn"><a routerLink="/courses">Read More</a></button> -->
         </div>
       </div>
     </li>
