@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  selector: 'app-admprofile',
+  templateUrl: './admprofile.component.html',
+  styleUrls: ['./admprofile.component.css']
 })
-export class SignUpComponent implements OnInit {
-
+export class AdmprofileComponent implements OnInit {
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router, private toast: ToastrService) { }
 
-  ngOnInit() {
-  }
+  data=<any>''
   signHide = true
   signSubmit = true
   submitted = false
@@ -54,40 +52,52 @@ export class SignUpComponent implements OnInit {
   )
 
 
-  onSign() {
 
-    this.isProcessing = true
-    const formData = this.signUpForm.value
-
-
-    this.auth.postStudent(formData).subscribe((res) => {
-      console.log(res);
-      if (res.success) {
-
-        this.isProcessing = false
-        this.toast.success('Registration  SuccessFull', 'Success')
-        this.router.navigate(['/login'])
+  ngOnInit() {
+    this.auth.getadmProfile().subscribe(res=>{
+      console.log({res});
+      if(res.success){
+        this.data=res.data
       }
-      else {
+      
+    })
+}
 
-        if (this.submitted = true) {
-          this.isProcessing = false
+ontrnSign() {
 
-          this.toast.error(res.message, 'Failed')
-        }
+  this.isProcessing = true
+  const formData = this.signUpForm.value
 
 
-      }
+  this.auth.postTrainer(formData).subscribe((res) => {
+    console.log(res);
+    if (res.success) {
+
+      this.isProcessing = false
+      this.toast.success('Registration  SuccessFull', 'Success')
+      // this.router.navigate(['/login'])
     }
+    else {
 
-    )
+      if (this.submitted = true) {
+        this.isProcessing = false
+
+        this.toast.error(res.message, 'Failed')
+      }
 
 
+    }
   }
 
-  
+  )
 
 
+}
 
+
+logout(){
+  localStorage.clear()
+  this.router.navigate(['/'])
+}
 
 }

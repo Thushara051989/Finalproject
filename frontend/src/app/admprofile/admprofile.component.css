@@ -11,14 +11,7 @@
     background-color: rgb(228, 231, 237);
     border: 1px solid;
     border-radius: 0.4rem;
-    width:500px;
-    height: 300px;
-    
-    
-}
-#lb{
-    font-weight: bolder;
-    font-size: larger;
+    width:350px
 }
 
 mat-form-field{
@@ -27,7 +20,7 @@ width: 100%;
 
 .bg-image {
     /* The image used */
-    background-image:URL('/assets/images/losi.jpg');
+    background-image:URL('/assets/images/signup2.jpg');
   
   
     /* Full height */

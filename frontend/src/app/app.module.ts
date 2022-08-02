@@ -23,6 +23,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AdmprofileComponent } from './admprofile/admprofile.component';
+import { TrnprofileComponent } from './trnprofile/trnprofile.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { ProfileComponent } from './profile/profile.component';
     FooterComponent,
     HeaderComponent,
     CoursesComponent,
-    ProfileComponent
+    ProfileComponent,
+    AdmprofileComponent,
+    TrnprofileComponent
   ],
   imports: [
     BrowserModule,
