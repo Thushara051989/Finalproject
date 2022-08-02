@@ -1,0 +1,43 @@
+.main{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    align-content: center;
+}
+
+.card mt-8 p-3 shadow{
+    margin-left: 20;
+    background-color: #67f8e9;
+    
+}
+
+.right1{
+    
+    background-color: #67f8e9;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    align-content: center;
+    
+}
+
+.left{
+    background-color: rgb(170, 238, 43);
+    width: 20%;
+    height: 200px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-decoration: none;
+}
+.right{
+    background-color: #ff0095;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    align-content: top;
+}
