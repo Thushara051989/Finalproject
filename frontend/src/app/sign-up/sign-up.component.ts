@@ -24,15 +24,10 @@ export class SignUpComponent implements OnInit {
     { name: 'Mern Stack' },
   ]
   isProcessing = false
-  message: string = ''
-  className = 'd-none'
+  
 
   get signControls() {
     return this.signUpForm.controls
-  }
-
-  getClassName() {
-    return this.className
   }
 
 
@@ -89,6 +84,8 @@ export class SignUpComponent implements OnInit {
 
 
   }
+
+  
 
 
 

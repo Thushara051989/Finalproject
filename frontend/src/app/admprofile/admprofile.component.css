@@ -1,0 +1,33 @@
+.center{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 5rem;
+}
+
+.login-card{
+    background-color: rgb(228, 231, 237);
+    border: 1px solid;
+    border-radius: 0.4rem;
+    width:350px
+}
+
+mat-form-field{
+width: 100%;
+}
+
+.bg-image {
+    /* The image used */
+    background-image:URL('/assets/images/signup2.jpg');
+  
+  
+    /* Full height */
+    height: 50rem;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

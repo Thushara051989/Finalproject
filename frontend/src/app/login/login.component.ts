@@ -52,6 +52,23 @@ stdLogin(){
 }
 
 trainerLogin(){
+   const dataaa=this.signInform.value
+  this.auth.loginTrainer(dataaa).subscribe(res=>{
+    console.log({res});
+    
+    if(res.success){
+      localStorage.setItem('token',res.token)
+      this.toast.success(res.message,'Success')
+    this.router.navigate(['/trnprofile'])
+    }
+    else{
+      this.toast.error(res.message,'failed')
+    }
+
+  },
+  err=>{
+    alert('login failed')
+  })
 
 
 }

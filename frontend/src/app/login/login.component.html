@@ -34,7 +34,7 @@
           <a routerLink="/signup">Create an Account?</a>
         </mat-card>
       </mat-tab>
-      <!-- <mat-tab id="lb" label="Trainer">
+      <mat-tab id="lb" label="Trainer">
         <mat-card class="login-card">
           <form [formGroup]="signInform" (ngSubmit)="trainerLogin()">
             <br>
@@ -63,10 +63,9 @@
               <button mat-raised-button color="primary" style="text-align:center"
                 [disabled]="signInform.invalid">Login</button>
             </div>
-          </form><br>
-          <a routerLink="/signup">Create an Account?</a>
+          </form>
         </mat-card>
-      </mat-tab> -->
+      </mat-tab>
       <mat-tab id="lb" label="Admin">
         <mat-card class="login-card">
           <form [formGroup]="signInform" (ngSubmit)="adminlogin()">
@@ -96,8 +95,7 @@
               <button mat-raised-button color="primary" style="text-align:center"
                 [disabled]="signInform.invalid">Login</button>
             </div>
-          </form><br>
-          <a routerLink="/signup">Create an Account?</a>
+          </form>
         </mat-card>
       </mat-tab>
     </mat-tab-group>

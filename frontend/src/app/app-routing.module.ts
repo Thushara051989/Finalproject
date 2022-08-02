@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { TrnprofileComponent } from './trnprofile/trnprofile.component';
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
 {path:'signup',component:SignUpComponent},
 {path:'courses',component:CoursesComponent},
 {path:'profile',canActivate:[AuthGuard],component:ProfileComponent},
-{path:'admprofile',canActivate:[AuthGuard],component:AdmprofileComponent}
+{path:'admprofile',canActivate:[AuthGuard],component:AdmprofileComponent},
+{path:'trnprofile',canActivate:[AuthGuard],component:TrnprofileComponent}
 ];
 
 @NgModule({

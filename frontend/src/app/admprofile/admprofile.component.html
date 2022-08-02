@@ -9,4 +9,78 @@
         </div>
 
     </div>
+    <div>
+        <div class="bg-image">
+            <div class="center">
+                <mat-tab-group style="border:1px solid;background: rgb(235, 247, 241);border-radius: 0.7rem;">
+                    <mat-tab label="SignUp">
+        
+                        <mat-card class="login-card">
+                            <form [formGroup]="signUpForm" (ngSubmit)="ontrnSign()">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Firstname</mat-label>
+                                    <input matInput placeholder="firstName" formControlName="firstname">
+                                    <mat-error *ngIf="signControls?.firstname?.errors?.required&&signSubmit">Firstname required
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Lastname</mat-label>
+                                    <input matInput placeholder="lastName" formControlName="lastname">
+                                    <mat-error *ngIf="signControls?.lastname?.errors?.required&&signSubmit">lastname required
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Course</mat-label>
+                                    <mat-select placeholder="Course" formControlName="course">
+                                        <mat-option *ngFor="let item of course" [value]="item.name">
+                                            {{item.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="signControls?.course?.errors?.required&&signSubmit">course required
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+        
+                                    <mat-label>Email</mat-label>
+                                    <input matInput placeholder="Email" formControlName="email" type="email">
+                                    <mat-error *ngIf="signControls?.email?.errors?.required&&signSubmit">Email required
+                                    </mat-error>
+                                    <mat-error *ngIf="signControls?.email?.errors?.['pattern']&&signSubmit">Email invalid
+                                    </mat-error>
+        
+        
+        
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Password</mat-label>
+                                    <input matInput placeholder="Password" formControlName="password" type="password">
+        
+                                    <mat-error *ngIf="signControls?.password?.errors?.required&&signSubmit">password required
+                                    </mat-error>
+                                    <mat-error *ngIf="signControls?.Spassword?.errors?.['minLength']&&signSubmit">min length
+                                        required
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Confirm Password</mat-label>
+                                    <input matInput placeholder="ConfirmPassword" formControlName="ConfirmPass" type="password">
+        
+                                    <mat-error *ngIf="signControls?.ConfirmPass?.errors?.required&&signSubmit">password required
+                                    </mat-error>
+                                    <mat-error *ngIf="signControls?.ConfirmPass?.errors?.passMisMatch&&signSubmit">password
+                                        mismatch</mat-error>
+                                </mat-form-field>
+                                <div style="text-align: center;">
+                                    <button mat-raised-button color="primary" style="text-align:center"
+                                        [disabled]="signUpForm.invalid">Register</button>
+                                </div>
+                            </form><br>
+                            <a routerLink="/login">Already have an Account?</a>
+                        </mat-card>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+    </div>
 </div>
