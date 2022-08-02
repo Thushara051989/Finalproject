@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CourseService } from '../course.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  courseArray:any=[]
+  constructor(private courseService:CourseService,private router:Router) { }
 
-  constructor() { }
+  ngOnInit() {
+    this.courseService.displayCourse().subscribe((res)=>{
+      console.log(res);
+      this.courseArray=res.item
+      
+    })
+  }
 
-  ngOnInit(): void {
+  apply(){
+    this.router.navigate(['/signup'])
   }
 
 }
