@@ -23,6 +23,14 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SdashboardComponent } from './profile/sdashboard/sdashboard.component';
+import { SprofileComponent } from './profile/sprofile/sprofile.component';
+import { SmessagesComponent } from './profile/smessages/smessages.component';
+import { SsettingsComponent } from './profile/ssettings/ssettings.component';
+import { SgradeComponent } from './profile/sgrade/sgrade.component';
+
+
 
 
 @NgModule({
@@ -34,7 +42,12 @@ import { ProfileComponent } from './profile/profile.component';
     FooterComponent,
     HeaderComponent,
     CoursesComponent,
-    ProfileComponent
+    ProfileComponent,
+    SdashboardComponent,
+    SprofileComponent,
+    SmessagesComponent,
+    SsettingsComponent,
+    SgradeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +63,8 @@ import { ProfileComponent } from './profile/profile.component';
     MatIconModule,
     MatSelectModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgbModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

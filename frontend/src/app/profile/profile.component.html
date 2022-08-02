@@ -1,12 +1,36 @@
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card mt-5 p-3 shadow">
-                <h3>Hello,{{data.firstname}}</h3>
-                <p>Email:{{data.email}}</p>
-                <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
-            </div>
-        </div>
 
+<div class="left1">
+       <a class = "navbar-brand" href="index.html"><img src="assets/images/gurukul_yellow1.png" width="100px" height="100px" style="padding-top:10px" style="padding-bottom:10px"></a>
+</div>
+<div class="col-md-12">
+    <div class="card mt-8 p-3 shadow">
+                <h3>Hello {{data.firstname}},</h3>
+                <p>Email: {{data.email}}</p>
+                <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
     </div>
 </div>
+    
+<div class = "main">
+
+ <div class="left">
+    <a routerLink="sdashboard">Dashboard</a>
+    <br>
+    <a routerLink="sprofile">Profile</a>
+    <br>
+    <a routerLink="sgrade">Grade</a>
+    <br>
+    <a routerLink="smessages">Messages</a>
+    <br>
+    <a routerLink="ssettings">Settings</a>
+    
+</div>
+    <div class="right">
+       <router-outlet></router-outlet>
+    </div>
+</div>
+
+ 
+ 
+
+
+
