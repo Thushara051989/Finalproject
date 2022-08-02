@@ -17,6 +17,9 @@ export class AuthService {
   loginStudent(data: any) {
     return this.http.post<any>('http://localhost:3000/student/login', { data })
   }
+  loginAdmin(data: any) {
+    return this.http.post<any>('http://localhost:3000/admin/login', { data })
+  }
 
   getProfile() {
     let headers = {
@@ -24,6 +27,13 @@ export class AuthService {
     }
     return this.http.get<any>('http://localhost:3000/student/profile', { headers: headers })
   }
+  getadmProfile() {
+    let headers = {
+      'authorization': 'Bearer ' + localStorage.getItem('token')
+    }
+    return this.http.get<any>('http://localhost:3000/admin/profile', { headers: headers })
+  }
+
   loggedIn() {
     return !!localStorage.getItem('token')
   }

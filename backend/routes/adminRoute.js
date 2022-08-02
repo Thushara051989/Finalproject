@@ -2,8 +2,8 @@ const express = require('express')
 const router = express.Router()
 const adminModel = require('../src/model/adminModel')
 const bcrypt = require('bcrypt')
-// const jwt = require('jsonwebtoken')
-// const checkAuth=require('../middleware/check_auth')
+const jwt = require('jsonwebtoken')
+const checkAuth=require('../middleware/check_admAuth')
 
 
 router.post('/signUp',(req, res) => {
@@ -60,11 +60,11 @@ router.get('/', async (req, res) => {
     try {
         res.header("Access-Control-Allow-Origin", "*")
         res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
-        let allstudent = await studentModel.find()
+        let alladmin = await adminModel.find()
         res.json({
             success: 1,
             message: 'student listed succesfuly',
-            item: allstudent
+            item: alladmin
         })
     }
     catch (err) {
@@ -76,78 +76,78 @@ router.get('/', async (req, res) => {
 })
 
 
-// router.post('/login', (req, res) => {
+router.post('/login', (req, res) => {
 
-//     res.header("Access-Control-Allow-Origin", "*")
-//     res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
-
-
-//     studentModel.find({ email: req.body.data.email })
-//         .exec()
-//         .then((result) => {
-//             if (result.length < 1) {
-//                 return res.json({
-//                     success: 0,
-//                     message: 'Account doesnt exist'
-//                 })
-//             }
-//             const user = result[0]
-//             bcrypt.compare(req.body.data.password, user.password, (err, ret) => {
-//                 if (ret) {
-//                     const payload = {
-//                         userId: user._id
-//                     }
-//                     const token = jwt.sign(payload, 'webBatch')
-//                     return res.json({
-//                         success: 1,
-//                         token: token,
-//                         message: 'login Successfull'
-//                     })
-//                 }
-//                 else {
-//                     return res.json({
-//                         success: 0,
-//                         message: 'password do not Match'
-//                     })
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
 
 
-//                 }
+    adminModel.find({ email: req.body.data.email })
+        .exec()
+        .then((result) => {
+            if (result.length < 1) {
+                return res.json({
+                    success: 0,
+                    message: 'Account doesnt exist'
+                })
+            }
+            const user = result[0]
+            bcrypt.compare(req.body.data.password, user.password, (err, ret) => {
+                if (ret) {
+                    const payload = {
+                        userId: user._id
+                    }
+                    const token = jwt.sign(payload, 'BatchWeb')
+                    return res.json({
+                        success: 1,
+                        token: token,
+                        message: 'login Successfull'
+                    })
+                }
+                else {
+                    return res.json({
+                        success: 0,
+                        message: 'wrong password '
+                    })
 
 
-//             })
-//         })
-//         .catch((err) => {
-//             res.json({
-//                 success: 0,
-//                 message: 'Auth failed'
-//             })
-//         })
-// })
+                }
 
-//  router.get('/profile',checkAuth,(req,res)=>{
 
-//     res.header("Access-Control-Allow-Origin", "*")
-//     res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
+            })
+        })
+        .catch((err) => {
+            res.json({
+                success: 0,
+                message: 'Auth failed'
+            })
+        })
+})
 
-//     const userId=req.userData.userId
-//     studentModel.findById(userId)
-//     .exec()
-//     .then((result)=>{
-//         res.json({
-//             success:1,
-//             data:result
-//         })
-//     })
-//     .catch(err=>{
-//         res.json({
-//             success:0,
-//             message:'server error'
-//         })
-//     })
+ router.get('/profile',checkAuth,(req,res)=>{
+
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
+
+    const userId=req.userData.userId
+    adminModel.findById(userId)
+    .exec()
+    .then((result)=>{
+        res.json({
+            success:1,
+            data:result
+        })
+    })
+    .catch(err=>{
+        res.json({
+            success:0,
+            message:'server error'
+        })
+    })
 
 
  
-// })
+})
 
 
 module.exports = router
