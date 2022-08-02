@@ -18,7 +18,7 @@ router.post('/signUp', (req, res) => {
             return res.json({
 
                 success: 0,
-                message: 'Hashing iss'
+                message: 'Hashing issue'
 
             })
         }
@@ -55,13 +55,6 @@ router.post('/signUp', (req, res) => {
 
         }
     })
-
-
-
-
-
-
-
 })
 
 
@@ -117,7 +110,7 @@ router.post('/login', (req, res) => {
                 else {
                     return res.json({
                         success: 0,
-                        message: 'password do not Match'
+                        message: ' wrong password '
                     })
 
 

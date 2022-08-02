@@ -9,6 +9,7 @@ mongoose
 const adminRouter=require('./routes/adminRoute')
 const trainerRouter=require('./routes/trainerRoute')
 const studentRouter=require('./routes/studentRoute')
+const courseRouter=require('./routes/courseRoute')
 
 
 
@@ -31,6 +32,7 @@ app.use(bodyParser.json())
 app.use('/admin',adminRouter)
 app.use('/trainer',trainerRouter)
 app.use('/student',studentRouter)
+app.use('/course',courseRouter)
 
 
 

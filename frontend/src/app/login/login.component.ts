@@ -26,10 +26,11 @@ get signInControls(){
   return this.signInform.controls
 }
 
+
   ngOnInit() {
   }
 
-onlogin(){
+stdLogin(){
   const data=this.signInform.value
   this.auth.loginStudent(data).subscribe(res=>{
     console.log({res});
@@ -47,6 +48,50 @@ onlogin(){
   err=>{
     alert('login failed')
   })
+
+}
+
+trainerLogin(){
+   const dataaa=this.signInform.value
+  this.auth.loginTrainer(dataaa).subscribe(res=>{
+    console.log({res});
+    
+    if(res.success){
+      localStorage.setItem('token',res.token)
+      this.toast.success(res.message,'Success')
+    this.router.navigate(['/trnprofile'])
+    }
+    else{
+      this.toast.error(res.message,'failed')
+    }
+
+  },
+  err=>{
+    alert('login failed')
+  })
+
+
+}
+
+adminlogin(){
+  const dataa=this.signInform.value
+  this.auth.loginAdmin(dataa).subscribe(res=>{
+    console.log({res});
+    
+    if(res.success){
+      localStorage.setItem('token',res.token)
+      this.toast.success(res.message,'Success')
+    this.router.navigate(['/admprofile'])
+    }
+    else{
+      this.toast.error(res.message,'failed')
+    }
+
+  },
+  err=>{
+    alert('login failed')
+  })
+
 
 }
 
