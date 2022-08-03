@@ -8,7 +8,9 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-
+  sendEmail(url:any,data:any){
+    return this.http.post(url,data)
+  }
 
   postStudent(data: any) {
     return this.http.post<any>('http://localhost:3000/student/signUp', { data })
@@ -16,6 +18,8 @@ export class AuthService {
   postTrainer(data: any) {
     return this.http.post<any>('http://localhost:3000/trainer/signUp', { data })
   }
+
+
 
 
   loginStudent(data: any) {
