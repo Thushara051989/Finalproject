@@ -13,6 +13,7 @@ import { SmessagesComponent } from './profile/smessages/smessages.component';
 import { SprofileComponent } from './profile/sprofile/sprofile.component';
 import { SsettingsComponent } from './profile/ssettings/ssettings.component';
 import { TrnprofileComponent } from './trnprofile/trnprofile.component';
+import { AdmtrnsecComponent } from './admprofile/admtrnsec/admtrnsec.component';
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
@@ -28,7 +29,8 @@ children:[
   {path:'ssettings',component:SsettingsComponent}
 ]},
 {path:'admprofile',canActivate:[AuthGuard],component:AdmprofileComponent},
-{path:'trnprofile',canActivate:[AuthGuard],component:TrnprofileComponent}
+{path:'trnprofile',canActivate:[AuthGuard],component:TrnprofileComponent},
+{path:'admtrnsec',component:AdmtrnsecComponent}
 
 ];
 

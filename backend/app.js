@@ -98,7 +98,7 @@ async function sendMail(user,callback){
     let mailOptions={
         from:'GURUKUL Adminstrator',
         to:user.email,
-        subject:'Registration Successfull',
+        subject:'Trainer login details',
         html:`<h2>Dear ${user.firstname} ${user.lastname},</h2><br>
         <h4> kindly login as a trainer with the credential listed below</h4>
         <h3>UserEmail: ${user.email}</h3>
