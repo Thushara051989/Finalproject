@@ -34,6 +34,7 @@ import { SgradeComponent } from './profile/sgrade/sgrade.component';
 import { AdmprofileComponent } from './admprofile/admprofile.component';
 import { TrnprofileComponent } from './trnprofile/trnprofile.component';
 import { CourseService } from './course.service';
+import { AdmtrnsecComponent } from './admprofile/admtrnsec/admtrnsec.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { CourseService } from './course.service';
     SsettingsComponent,
     SgradeComponent,
     AdmprofileComponent,
-    TrnprofileComponent
+    TrnprofileComponent,
+    AdmtrnsecComponent
   ],
   imports: [
     BrowserModule,
