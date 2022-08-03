@@ -1,21 +1,27 @@
+
 <div class="divhome">
+  <button id="bt1" class="btn btn-outline-danger" (click)="logout()">Logout</button>
   <h1>HELLO ADMIN !!!</h1>
 <img src="assets/images/admin1.jpg" alt="logo"> 
+
   </div>
+  
   <div>
-    <h2>Trainer list</h2>
+    <h2>TRAINER LIST</h2>
+    <div style="overflow-x:auto;">
     <table>
         <tr>
-          <th>name</th>
+          <th>Name</th>
           <th>Course</th>
           <th>Email</th>
-          <th>action</th>
+          <th>Action</th>
         </tr>
         <tr *ngFor="let data of trainerArray">
           <td>{{data.firstname}}</td>
           <td>{{data.course}}</td>
           <td>{{data.email}}</td>
-          <td><button>remove</button></td>
+          <td><button class="btn">remove</button></td>
         </tr>
       </table>
+    </div>
   </div>
