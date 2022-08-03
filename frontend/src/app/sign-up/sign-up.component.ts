@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -66,7 +67,16 @@ export class SignUpComponent implements OnInit {
 
         this.isProcessing = false
         this.toast.success('Registration  SuccessFull', 'Success')
-        this.router.navigate(['/login'])
+
+        this.auth.sendEmail('http://localhost:3000/sendmail',formData).subscribe(
+          data=>{
+            let res:any=data
+            console.log(`${formData.firstname} is successfully registered`);
+            
+          }
+        )
+
+        // this.router.navigate(['/login'])
       }
       else {
 
