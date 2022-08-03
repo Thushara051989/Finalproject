@@ -29,7 +29,6 @@ import { SprofileComponent } from './profile/sprofile/sprofile.component';
 import { SmessagesComponent } from './profile/smessages/smessages.component';
 import { SsettingsComponent } from './profile/ssettings/ssettings.component';
 import { SgradeComponent } from './profile/sgrade/sgrade.component';
-
 import { AdmprofileComponent } from './admprofile/admprofile.component';
 import { TrnprofileComponent } from './trnprofile/trnprofile.component';
 import { CourseService } from './course.service';
@@ -52,7 +51,6 @@ import { CourseService } from './course.service';
     SgradeComponent,
     AdmprofileComponent,
     TrnprofileComponent
-
   ],
   imports: [
     BrowserModule,

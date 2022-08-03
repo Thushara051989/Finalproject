@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port=process.env.port || 3000
 const mongoose=require('mongoose')
+const nodemailer=require('nodemailer')
 
 mongoose
 
@@ -15,6 +16,7 @@ const courseRouter=require('./routes/courseRoute')
 
 const bodyParser=require('body-parser')
 const cors = require('cors')
+const SendmailTransport = require('nodemailer/lib/sendmail-transport')
 
 
 app.use(cors())
@@ -34,6 +36,42 @@ app.use('/trainer',trainerRouter)
 app.use('/student',studentRouter)
 app.use('/course',courseRouter)
 
+
+app.post('/sendmail',(req,res)=>{
+    console.log('request came');
+    let user=req.body
+
+    sendMail(user,info=>{
+        console.log(`The mail has been send and the id is ${info.messageId}`)
+        res.send(info)
+    })
+})
+
+async function sendMail(user,callback){
+    let transporter=nodemailer.createTransport({
+        host:'smtp.gmail.com',
+        port:587,
+        secure:false,
+        auth:{
+            user:'jishnupunathil000@gmail.com',
+            pass:'onoomagdjflksnuz'
+
+        }
+    })
+
+    let mailOptions={
+        from:'GURUKUL Adminstrator',
+        to:user.email,
+        subject:'Registration Successfull',
+        html:`<h2>Dear ${user.firstname} ${user.lastname},</h2><br>
+        <h4>Thank You for registering in Gurukul. For accessing your course kindly login to the students section.</h4><br><br>
+        <h3> Thank you from ICTAK`
+    }
+
+    let info=await transporter.sendMail(mailOptions)
+
+    callback(info)
+}
 
 
 
