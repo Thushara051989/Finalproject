@@ -1,0 +1,21 @@
+<div class="divhome">
+  <h1>HELLO ADMIN !!!</h1>
+<img src="assets/images/admin1.jpg" alt="logo"> 
+  </div>
+  <div>
+    <h2>Student list</h2>
+    <table>
+        <tr>
+          <th>name</th>
+          <th>Course</th>
+          <th>Email</th>
+          <th>action</th>
+        </tr>
+        <tr *ngFor="let data of studentArray">
+          <td>{{data.firstname}}</td>
+          <td>{{data.course}}</td>
+          <td>{{data.email}}</td>
+          <td><button>remove</button></td>
+        </tr>
+      </table>
+  </div>
