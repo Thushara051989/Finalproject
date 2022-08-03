@@ -23,7 +23,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ProfileComponent } from './profile/profile.component';
-<<<<<<< HEAD
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SdashboardComponent } from './profile/sdashboard/sdashboard.component';
 import { SprofileComponent } from './profile/sprofile/sprofile.component';
@@ -32,11 +31,9 @@ import { SsettingsComponent } from './profile/ssettings/ssettings.component';
 import { SgradeComponent } from './profile/sgrade/sgrade.component';
 
 
-=======
 import { AdmprofileComponent } from './admprofile/admprofile.component';
 import { TrnprofileComponent } from './trnprofile/trnprofile.component';
 import { CourseService } from './course.service';
->>>>>>> master
 
 
 @NgModule({
@@ -49,16 +46,13 @@ import { CourseService } from './course.service';
     HeaderComponent,
     CoursesComponent,
     ProfileComponent,
-<<<<<<< HEAD
     SdashboardComponent,
     SprofileComponent,
     SmessagesComponent,
     SsettingsComponent,
-    SgradeComponent
-=======
+    SgradeComponent,
     AdmprofileComponent,
     TrnprofileComponent
->>>>>>> master
   ],
   imports: [
     BrowserModule,
