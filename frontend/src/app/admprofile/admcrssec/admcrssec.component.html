@@ -1,0 +1,21 @@
+<div class="divhome">
+    <h1>HELLO ADMIN !!!</h1>
+  <img src="assets/images/admin1.jpg" alt="logo"> 
+    </div>
+    <div>
+        <div class="main">
+            <ul class="cards" *ngFor="let data of courseArray">
+              <li class="cards_item">
+                <div class="card">
+                  <img class="card_image" [src]="data.image">
+                  <div class="card_content">
+                    <h2 class="card_title">{{data.name}}</h2>
+                    <h3 class="card_title">{{data.duration}}</h3>
+                    <p class="card_text">{{data.description}}</p>
+                    <button class="btn btn-outline-danger">update</button>
+                    <button class="btn btn-outline-danger">delete</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
