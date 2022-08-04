@@ -22,6 +22,9 @@
     vertical-align: middle;
     margin-top: 30px;
   }
+  .im{
+    margin-left: -2px;
+  }
 .center{
     position: relative;
     display: flex;
@@ -86,4 +89,30 @@ width: 100%;
     margin-right: -1250px;
     margin-top: 10px;
     font-size: larger;
+  }
+
+  .card{
+    background: linear-gradient(to bottom left, #5c76a0 40%, #1720cd 100%);
+    
+  }
+  img {
+    height: 100px;
+    max-width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    margin-left: 100px;
+  }
+  a{
+    margin-left: 110px;
+    color: black;
+    font-size: larger;
+    font-weight: bolder;
+  }
+  .card:hover{
+  
+    transform :translate3d(2px,-5px,0);
+    z-index:3;
+    border-color: #007bff !important;
+    box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07), 1px 6px 12 px rgba(39, 44, 49, 0.04);
+    transition:all 0.6s ease;
   }
