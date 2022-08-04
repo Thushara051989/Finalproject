@@ -10,4 +10,9 @@ export class TrainerService {
   displayTrainers(){
     return this.http.get<any>('http://localhost:3000/trainer')
   }
+
+  deleteTrainer(id:any){
+    return this.http.delete(`http://localhost:3000/trainer/${id}`)
+  }
+  
 }

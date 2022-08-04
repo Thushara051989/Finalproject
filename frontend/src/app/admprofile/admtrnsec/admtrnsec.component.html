@@ -15,13 +15,13 @@
           <th>Name</th>
           <th>Course</th>
           <th>Email</th>
-          <th>Action</th>
+          <th>Add</th>
         </tr>
         <tr *ngFor="let data of trainerArray">
           <td>{{data.firstname}}</td>
           <td>{{data.course}}</td>
           <td>{{data.email}}</td>
-          <td><button class="btn">remove</button></td>
+          <td><button class="btn" (click)="removeTrainer(data._id)">remove</button></td>
         </tr>
       </table>
     </div>

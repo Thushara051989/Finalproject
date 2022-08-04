@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/service/student.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-admstdsec',
   templateUrl: './admstdsec.component.html',
@@ -20,8 +21,22 @@ export class AdmstdsecComponent implements OnInit {
     })
 
 }
+
+removeStd(id:any){
+  if(confirm('are you sure want to delete?')){
+    this.studentservice.deleteStudent(id).subscribe((res:any)=>{
+      if(res.success===1){
+  
+        this.ngOnInit()
+  
+      }
+    })
+
+  }
+}
 logout(){
   localStorage.clear()
   this.router.navigate(['/'])
 }
+
 }

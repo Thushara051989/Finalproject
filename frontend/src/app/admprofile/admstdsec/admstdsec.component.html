@@ -5,6 +5,7 @@
 <img src="assets/images/admin1.jpg" alt="logo"> 
   </div>
   <div>
+    <br><br>
     <h2>STUDENT LIST</h2>
     <table>
         <tr>
@@ -17,7 +18,7 @@
           <td>{{data.firstname}}</td>
           <td>{{data.course}}</td>
           <td>{{data.email}}</td>
-          <td><button class="btn">remove</button></td>
+          <td><button class="btn" (click)="removeStd(data._id)">remove access</button></td>
         </tr>
       </table>
   </div>

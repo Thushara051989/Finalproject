@@ -5,17 +5,22 @@
 <div class="left1">
        <a class = "navbar-brand" href="index.html"><img src="assets/images/gurukul_yellow1.png" width="100px" height="100px" style="padding-top:10px" style="padding-bottom:10px"></a>
 </div>
-<div class="col-md-12">
-    <div class="card mt-8 p-3 shadow">
-                <img src="https://cdn-icons-png.flaticon.com/128/456/456212.png" height="10" width="15" alt="">
-                <h3>Hello {{data.firstname}},</h3>
-                <p>Email: {{data.email}}</p>
-                <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
-    </div>
+<div class="right1">
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+        <img src="https://th.bing.com/th/id/R.9d49d8c751a354475fee49bbd877fecf?rik=Gm2wixzvs5YQIQ&pid=ImgRaw&r=0" alt="img" width="30" height="30" class="rounded-circle">
+        
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
 </div>
+<h3>Hello {{data.firstname}},</h3>
+
+
     
-
-
 <!-- The sidebar -->
 
 
@@ -28,10 +33,12 @@
         <a routerLink="sgrade"><i class="fa fa-fw fa-graduation-cap"></i> Grade</a>
         <a routerLink="smessages"><i class="fa fa-fw fa-envelope"></i> Messages</a>
         <a routerLink="ssettings"><i class="fa fa-fw fa-wrench"></i> Settings</a>
+        <a href="#" onClick={this.logout}><i class="fa fa-fw fa-sign-out"></i> Logout</a>
     </div>
  </div>
  <div class="right">
-       <router-outlet></router-outlet>
+    <h3>Welcome to ICTAcademy, Kerala.</h3>
+    <router-outlet></router-outlet>
  </div>
 </div>
 
