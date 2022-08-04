@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseService } from 'src/app/service/course.service';
 import { Router } from '@angular/router';
-import { CourseService } from '../service/course.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-admcrssec',
+  templateUrl: './admcrssec.component.html',
+  styleUrls: ['./admcrssec.component.css']
 })
-export class HomeComponent implements OnInit {
+export class AdmcrssecComponent implements OnInit {
   courseArray:any=[]
   constructor(private courseService:CourseService,private router:Router) { }
 
@@ -18,9 +18,8 @@ export class HomeComponent implements OnInit {
       
     })
   }
-
-  apply(){
-    this.router.navigate(['/signup'])
+  logout(){
+    localStorage.clear()
+    this.router.navigate(['/'])
   }
-
 }

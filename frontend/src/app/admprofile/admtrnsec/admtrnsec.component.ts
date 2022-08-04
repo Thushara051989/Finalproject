@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TrainerService } from 'src/app/service/trainer.service';
-
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+declare var M: any;
 @Component({
   selector: 'app-admtrnsec',
   templateUrl: './admtrnsec.component.html',
@@ -8,7 +10,7 @@ import { TrainerService } from 'src/app/service/trainer.service';
 })
 export class AdmtrnsecComponent implements OnInit {
   trainerArray:any=[]
-  constructor(private trainerservice:TrainerService) { }
+  constructor(private trainerservice:TrainerService,private router:Router) { }
 
   ngOnInit() {
     this.trainerservice.displayTrainers().subscribe((res)=>{
@@ -17,5 +19,18 @@ export class AdmtrnsecComponent implements OnInit {
       
     })
 
+}
+logout(){
+  localStorage.clear()
+  this.router.navigate(['/'])
+}
+
+onDelete(id:any) {
+  if (confirm('Are you sure to delete this record ?') == true) {
+    this.trainerservice.onDelete(id).subscribe((res) => {
+    
+      M.toast({ html: 'Deleted successfully', classes: 'rounded' });
+    });
+  }
 }
 }

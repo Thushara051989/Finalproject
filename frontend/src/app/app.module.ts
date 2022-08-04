@@ -15,7 +15,7 @@ import {MatIconModule} from '@angular/material/icon'
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from './auth.service';
+import { AuthService } from './service/auth.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './footer/footer.component';
@@ -30,8 +30,12 @@ import { SsettingsComponent } from './profile/ssettings/ssettings.component';
 import { SgradeComponent } from './profile/sgrade/sgrade.component';
 import { AdmprofileComponent } from './admprofile/admprofile.component';
 import { TrnprofileComponent } from './trnprofile/trnprofile.component';
-import { CourseService } from './course.service';
+import { CourseService } from './service/course.service';
 import { AdmtrnsecComponent } from './admprofile/admtrnsec/admtrnsec.component';
+import { AdmstdsecComponent } from './admprofile/admstdsec/admstdsec.component';
+import { AdmcrssecComponent } from './admprofile/admcrssec/admcrssec.component';
+import { TcourseComponent } from './trnprofile/tcourse/tcourse.component';
+import { TstudentComponent } from './trnprofile/tstudent/tstudent.component';
 
 
 @NgModule({
@@ -51,7 +55,11 @@ import { AdmtrnsecComponent } from './admprofile/admtrnsec/admtrnsec.component';
     SgradeComponent,
     AdmprofileComponent,
     TrnprofileComponent,
-    AdmtrnsecComponent
+    AdmtrnsecComponent,
+    AdmstdsecComponent,
+    AdmcrssecComponent,
+    TcourseComponent,
+    TstudentComponent
   ],
   imports: [
     BrowserModule,

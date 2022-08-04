@@ -55,35 +55,46 @@ width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .glow {
-    font-size: 30px;
-    color: #fff;
-    margin-top: 50%;
-    text-align: center;
-    margin-left: 40%;
-   
-    animation: glow 1s ease-in-out infinite alternate;
+
+  th, td {
+    padding: 15px;
+    text-align: left;
   }
-  .glow:hover {
-    font-size: 40px;
-    color: aqua;
+  #bt1{
+    margin-right: -1250px;
+    margin-top: 5px;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 80%;
+    align-content: center;
+    margin-left: 8%;
+    text-align: justify;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 9px 16px;
+  }
+  .card_image{
+    align-content: center;
+    margin-left: 45%;
+    
   }
   .admin {
     background-color: black;
     font-family: 'Times New Roman', Times, serif;
   }
-  
-  /* @keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-    }
-    
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-    }
-  } */
-  #bt1{
-    margin-right: -1250px;
-    margin-top: 10px;
-    font-size: larger;
+  .card_title1:hover{
+    font-size: 40px;
+    color:blue;
+
+  }
+  .card_content {
+    padding: 1rem;
+    background: linear-gradient(to bottom left, rgb(241, 229, 231) 40%, #eebfdd 100%);
   }

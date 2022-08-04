@@ -1,24 +1,21 @@
-
 <div class="divhome">
   <button id="bt1" class="btn btn-outline-danger" (click)="logout()">Logout</button>
   <button id="bt2" class="btn btn-outline-danger" routerLink="/admprofile">Back</button>
   <h1>HELLO ADMIN !!!</h1>
 <img src="assets/images/admin1.jpg" alt="logo"> 
-
   </div>
-  
   <div>
-    <h2>TRAINER LIST</h2>
-    <div style="overflow-x:auto;">
+    <br><br>
+    <h2>STUDENT LIST</h2>
     <table>
         <tr>
-          <th>Name</th>
+          <th>name</th>
           <th>Course</th>
           <th>Email</th>
           <th>Add</th>
-          <th>Action</th>
+          <th>action</th>
         </tr>
-        <tr *ngFor="let data of trainerArray">
+        <tr *ngFor="let data of studentArray">
           <td>{{data.firstname}}</td>
           <td>{{data.course}}</td>
           <td>{{data.email}}</td>
@@ -26,5 +23,4 @@
           <td><button class="btn" (click)="onDelete(data._id)">remove</button></td>
         </tr>
       </table>
-    </div>
   </div>

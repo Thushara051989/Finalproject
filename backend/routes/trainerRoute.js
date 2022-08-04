@@ -148,8 +148,30 @@ router.post('/login', (req, res) => {
         })
     })
 
-
+    router.delete('/:id',async (req,res)=>{
+        let id=req.params.id
+    
+        let validId=mongoose.Types.ObjectId.isValid(id)
+        if (validId){
+            try{
+                await trainerModel.deleteOne({_id:id})
+                res.json({
+                    success:1,
+                    message:'Trainer deleted successsfully'
+                })
+            }
+            catch(err){
+    
+                res.json({
+                    success:0,
+                    message:'error occured while deleting'+err
+                })
+    
+            }
+        }
+    })
  
+
 })
 
 

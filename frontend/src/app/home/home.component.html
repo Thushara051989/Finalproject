@@ -4,14 +4,15 @@
     <a routerLink="/login">Login</a>
     <a routerLink="/signup">SignUp</a>
     <a routerLink="/courses">Courses</a>
-    <!-- <a routerLink="/contactus">Contact Us</a> -->
+    <a routerLink="/contactus">Contact Us</a>
   </nav>
 </header>
 <div class="divhome">
   <img src="assets/images/gurukul_yellow1.png" alt="logo">
 </div>
 <div class="main">
-  <ul class="cards" *ngFor="let data of courseArray">
+  <div class="row"> 
+  <ul class="col-4" *ngFor="let data of courseArray">
     <li class="cards_item">
       <div class="card">
         <img class="card_image" [src]="data.image">
@@ -20,11 +21,11 @@
           <h3 class="card_title">{{data.duration}}</h3>
           <p class="card_text">{{data.description}}</p>
           <button class="btn btn-outline-danger" (click)="apply()">Apply</button>
-          <!-- <button class="btn card_btn"><a routerLink="/courses">Read More</a></button> -->
         </div>
       </div>
     </li>
   </ul>
+</div>
 </div>
 <section class="tstmonial">
       <h2 style="text-align: center;">Testimonials</h2>
