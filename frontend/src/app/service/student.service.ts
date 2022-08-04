@@ -11,7 +11,7 @@ export class StudentService {
   displayStudents(){
     return this.http.get<any>('http://localhost:3000/student')
   }
-  onDelete(id:any) {
-    return this.http.delete<any>('http://localhost:3000/student'+`/${id}`);
+  deleteStudent(id:any){
+    return this.http.delete(`http://localhost:3000/student/${id}`)
   }
 }

@@ -16,6 +16,7 @@ import { TrnprofileComponent } from './trnprofile/trnprofile.component';
 import { AdmtrnsecComponent } from './admprofile/admtrnsec/admtrnsec.component';
 import { AdmstdsecComponent } from './admprofile/admstdsec/admstdsec.component';
 import { AdmcrssecComponent } from './admprofile/admcrssec/admcrssec.component';
+import { AddCourseComponent } from './admprofile/admcrssec/add-course/add-course.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,9 @@ children:[
 {path:'trnprofile',canActivate:[AuthGuard],component:TrnprofileComponent},
 {path:'admtrnsec',component:AdmtrnsecComponent},
 {path:'admstdsec',component:AdmstdsecComponent},
-{path:'admcrssec',component:AdmcrssecComponent}
+{path:'admcrssec',component:AdmcrssecComponent},
+{path:'addCourse',component:AddCourseComponent},
+{path:'edit/:id',component:AddCourseComponent}
 
 ];
 

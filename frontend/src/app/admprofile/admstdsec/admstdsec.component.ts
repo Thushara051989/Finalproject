@@ -21,6 +21,19 @@ export class AdmstdsecComponent implements OnInit {
     })
 
 }
+
+removeStd(id:any){
+  if(confirm('are you sure want to delete?')){
+    this.studentservice.deleteStudent(id).subscribe((res:any)=>{
+      if(res.success===1){
+  
+        this.ngOnInit()
+  
+      }
+    })
+
+  }
+}
 logout(){
   localStorage.clear()
   this.router.navigate(['/'])
