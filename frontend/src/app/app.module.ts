@@ -37,6 +37,8 @@ import { AdmcrssecComponent } from './admprofile/admcrssec/admcrssec.component';
 import { TcourseComponent } from './trnprofile/tcourse/tcourse.component';
 import { TstudentComponent } from './trnprofile/tstudent/tstudent.component';
 import { AddCourseComponent } from './admprofile/admcrssec/add-course/add-course.component';
+import { AddstudentComponent } from './addstudent/addstudent.component';
+import { AddtrainerComponent } from './addtrainer/addtrainer.component';
 
 
 @NgModule({
@@ -61,7 +63,9 @@ import { AddCourseComponent } from './admprofile/admcrssec/add-course/add-course
     AdmcrssecComponent,
     TcourseComponent,
     TstudentComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    AddstudentComponent,
+    AddtrainerComponent
   ],
   imports: [
     BrowserModule,

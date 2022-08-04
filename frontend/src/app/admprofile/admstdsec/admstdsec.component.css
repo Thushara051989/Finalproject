@@ -90,6 +90,9 @@ width: 100%;
   }
   #bt2{
     /* margin-right: -1250px; */
-    margin-left: -20px;
+    margin-left: -90px;
     margin-top: 5px;
+  }
+  #bt3{
+    margin-left: -20px;
   }
