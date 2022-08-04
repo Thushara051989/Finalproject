@@ -21,6 +21,13 @@
     margin: 10px;
     text-decoration: none;
 }
+.right1{
+    width: 100%;
+    /* height: 100%; */
+    padding: 10px;
+    margin: 10px;
+    align-content: top;
+}
 .right{
     background-color: #aa8c9b;
     width: 100%;
@@ -43,4 +50,10 @@
   }
   .sidebar a:hover {
     color: #f7441c;
+  }
+  h3{
+     margin-top: 0;
+     margin-left: 15px;
+     font-weight: bold;
+
   }
