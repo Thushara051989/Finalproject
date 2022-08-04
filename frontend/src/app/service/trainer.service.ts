@@ -5,9 +5,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TrainerService {
+  // onDelete() {
+  //   throw new Error('Method not implemented.');
+  // }
 
   constructor(private http:HttpClient) { }
   displayTrainers(){
     return this.http.get<any>('http://localhost:3000/trainer')
+  }
+  onDelete(id:any) {
+    return this.http.delete<any>('http://localhost:3000/trainer'+`/${id}`);
   }
 }

@@ -5,19 +5,22 @@
 <img src="assets/images/admin1.jpg" alt="logo"> 
   </div>
   <div>
+    <br><br>
     <h2>STUDENT LIST</h2>
     <table>
         <tr>
           <th>name</th>
           <th>Course</th>
           <th>Email</th>
+          <th>Add</th>
           <th>action</th>
         </tr>
         <tr *ngFor="let data of studentArray">
           <td>{{data.firstname}}</td>
           <td>{{data.course}}</td>
           <td>{{data.email}}</td>
-          <td><button class="btn">remove</button></td>
+          <td><button class="btn" >Add</button></td>
+          <td><button class="btn" (click)="onDelete(data._id)">remove</button></td>
         </tr>
       </table>
   </div>
