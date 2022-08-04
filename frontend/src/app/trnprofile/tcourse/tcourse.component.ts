@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tcourse.component.css']
 })
 export class TcourseComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {
