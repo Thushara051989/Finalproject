@@ -59,16 +59,21 @@ width: 100%;
     font-size: 30px;
     color: #fff;
     margin-top: 50%;
-    text-align: left;
+    text-align: center;
+    margin-left: 40%;
    
     animation: glow 1s ease-in-out infinite alternate;
   }
+  .glow:hover {
+    font-size: 40px;
+    color: aqua;
+  }
   .admin {
     background-color: black;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
   }
   
-  @keyframes glow {
+  /* @keyframes glow {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
     }
@@ -76,4 +81,9 @@ width: 100%;
     to {
       text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
+  } */
+  #bt1{
+    margin-right: -1250px;
+    margin-top: 10px;
+    font-size: larger;
   }

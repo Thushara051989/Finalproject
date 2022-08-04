@@ -1,6 +1,7 @@
 
 <div class="admin">   
 <div class="divhome">
+    <button id="bt1" class="btn btn-outline-danger" (click)="logout()">Logout</button>
   <h1>HELLO ADMIN !!!</h1>
 <img src="assets/images/admin1.jpg" alt="logo"> 
 
@@ -8,22 +9,17 @@
 
 <div class="container">
     <br>
+    <br><br>
     <div>
-        <a class="glow" routerLink="/admtrnsec">Trainer List</a><br>
-        
-        <a class="glow" routerLink="/admtrnsec">Student List</a><br>
-        <a class='glow' routerLink="/admcrssec">Courses</a>
-
+        <a class="glow" routerLink="/admtrnsec">TRAINER LIST</a><br>
+        <br>
+        <a class="glow" routerLink="/admstdsec">STUDENT LIST</a><br>
+        <br>
+        <a class='glow' routerLink="/admcrssec">COURSES</a>
+ <br><br><br><br><br>
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            
-            <div class="card mt-5 p-3 shadow">
-                <!-- <h3>Hello,{{data.email}}</h3> -->
-                <!-- <p>Email:{{data.email}}</p> -->
-                <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
-            </div>
-        </div>
+      
 
     <!-- <div>
         <div class="bg-image">

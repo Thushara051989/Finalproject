@@ -1,4 +1,6 @@
+<div class="admin">
 <div class="divhome">
+  <button id="bt1" class="btn btn-outline-danger" (click)="logout()">Logout</button>
     <h1>HELLO ADMIN !!!</h1>
   <img src="assets/images/admin1.jpg" alt="logo"> 
     </div>
@@ -9,7 +11,7 @@
                 <div class="card">
                   <img class="card_image" [src]="data.image">
                   <div class="card_content">
-                    <h2 class="card_title">{{data.name}}</h2>
+                    <h2 class="card_title1">{{data.name}}</h2>
                     <h3 class="card_title">{{data.duration}}</h3>
                     <p class="card_text">{{data.description}}</p>
                     <button class="btn btn-outline-danger">update</button>
@@ -18,4 +20,5 @@
                 </div>
               </li>
             </ul>
+          </div>
           </div>

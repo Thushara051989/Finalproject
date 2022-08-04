@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/service/student.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admstdsec',
@@ -9,7 +10,7 @@ import { StudentService } from 'src/app/service/student.service';
 export class AdmstdsecComponent implements OnInit {
 
   studentArray:any=[]
-  constructor(private studentservice:StudentService) { }
+  constructor(private studentservice:StudentService,private router:Router) { }
 
   ngOnInit() {
     this.studentservice.displayStudents().subscribe((res)=>{
@@ -18,5 +19,9 @@ export class AdmstdsecComponent implements OnInit {
       
     })
 
+}
+logout(){
+  localStorage.clear()
+  this.router.navigate(['/'])
 }
 }
