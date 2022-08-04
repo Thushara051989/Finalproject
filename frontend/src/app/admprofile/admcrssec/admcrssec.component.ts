@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from 'src/app/service/course.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admcrssec',
@@ -8,7 +9,7 @@ import { CourseService } from 'src/app/service/course.service';
 })
 export class AdmcrssecComponent implements OnInit {
   courseArray:any=[]
-  constructor(private courseService:CourseService) { }
+  constructor(private courseService:CourseService,private router:Router) { }
 
   ngOnInit() {
     this.courseService.displayCourse().subscribe((res)=>{
@@ -17,5 +18,8 @@ export class AdmcrssecComponent implements OnInit {
       
     })
   }
-
+  logout(){
+    localStorage.clear()
+    this.router.navigate(['/'])
+  }
 }

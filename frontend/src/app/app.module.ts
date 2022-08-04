@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -29,8 +28,6 @@ import { SprofileComponent } from './profile/sprofile/sprofile.component';
 import { SmessagesComponent } from './profile/smessages/smessages.component';
 import { SsettingsComponent } from './profile/ssettings/ssettings.component';
 import { SgradeComponent } from './profile/sgrade/sgrade.component';
-
-
 import { AdmprofileComponent } from './admprofile/admprofile.component';
 import { TrnprofileComponent } from './trnprofile/trnprofile.component';
 import { CourseService } from './service/course.service';

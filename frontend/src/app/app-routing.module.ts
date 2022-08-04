@@ -17,6 +17,7 @@ import { AdmtrnsecComponent } from './admprofile/admtrnsec/admtrnsec.component';
 import { AdmstdsecComponent } from './admprofile/admstdsec/admstdsec.component';
 import { AdmcrssecComponent } from './admprofile/admcrssec/admcrssec.component';
 
+
 const routes: Routes = [
 {path:'',component:HomeComponent},
 {path:'login',component:LoginComponent},
