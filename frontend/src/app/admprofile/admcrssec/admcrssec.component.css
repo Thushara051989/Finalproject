@@ -83,6 +83,7 @@ width: 100%;
   .card_image{
     align-content: center;
     margin-left: 45%;
+    
   }
   .admin {
     background-color: black;
@@ -93,4 +94,7 @@ width: 100%;
     color:blue;
 
   }
- 
+  .card_content {
+    padding: 1rem;
+    background: linear-gradient(to bottom left, rgb(241, 229, 231) 40%, #eebfdd 100%);
+  }
