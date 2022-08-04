@@ -13,7 +13,5 @@ export class TrainerService {
   displayTrainers(){
     return this.http.get<any>('http://localhost:3000/trainer')
   }
-  onDelete(id:any) {
-    return this.http.delete<any>('http://localhost:3000/trainer'+`/${id}`);
-  }
+  
 }
