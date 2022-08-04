@@ -11,7 +11,8 @@
   <img src="assets/images/gurukul_yellow1.png" alt="logo">
 </div>
 <div class="main">
-  <ul class="cards" *ngFor="let data of courseArray">
+  <div class="row"> 
+  <ul class="col-4" *ngFor="let data of courseArray">
     <li class="cards_item">
       <div class="card">
         <img class="card_image" [src]="data.image">
@@ -24,6 +25,7 @@
       </div>
     </li>
   </ul>
+</div>
 </div>
 <section class="tstmonial">
       <h2 style="text-align: center;">Testimonials</h2>
