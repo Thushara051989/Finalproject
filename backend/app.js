@@ -37,17 +37,17 @@ app.use('/student',studentRouter)
 app.use('/course',courseRouter)
 
 
-app.post('/sendmail',(req,res)=>{
+app.post('/sendstdmail',(req,res)=>{
     console.log('request came');
-    let user=req.body
+    let userstd=req.body
 
-    sendMail(user,info=>{
+    sendMail(userstd,info=>{
         console.log(`The mail has been send and the id is ${info.messageId}`)
         res.send(info)
     })
 })
 
-async function sendMail(user,callback){
+async function sendMail(userstd,callback){
     let transporter=nodemailer.createTransport({
         host:'smtp.gmail.com',
         port:587,
@@ -61,9 +61,9 @@ async function sendMail(user,callback){
 
     let mailOptions={
         from:'GURUKUL Adminstrator',
-        to:user.email,
+        to:userstd.email,
         subject:'Registration Successfull',
-        html:`<h2>Dear ${user.firstname} ${user.lastname},</h2><br>
+        html:`<h2>Dear ${userstd.firstname} ${userstd.lastname},</h2><br>
         <h4>Thank You for registering in Gurukul. For accessing your course kindly login to the students section.</h4><br><br>
         <h3> Thank you from ICTAK`
     }
@@ -72,6 +72,8 @@ async function sendMail(user,callback){
 
     callback(info)
 }
+
+
 
 app.post('/trainermail',(req,res)=>{
     console.log('request came');
@@ -90,7 +92,7 @@ async function sendMail(user,callback){
         secure:false,
         auth:{
             user:'jishnupunathil000@gmail.com',
-            pass:'onoomagdjflksnuz'
+            pass:'lgyhyqrrvxkkwder'
 
         }
     })

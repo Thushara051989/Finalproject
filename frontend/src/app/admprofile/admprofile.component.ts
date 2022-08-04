@@ -75,7 +75,7 @@ ontrnSign() {
 
       this.isProcessing = false
       this.toast.success('Registration  SuccessFull', 'Success')
-      this.auth.sendTrnrMail('http://localhost:3000/sendmail',formData).subscribe(
+      this.auth.sendTrnrMail('http://localhost:3000/trainermail',formData).subscribe(
         data=>{
           let res:any=data
           console.log(`${formData.firstname} is successfully registered`);
