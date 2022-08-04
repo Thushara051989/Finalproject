@@ -36,10 +36,10 @@ router.post('/add', async (req, res) => {
 
         const courseMod = new courseModel({
 
-            name: req.body.name,
-            duration: req.body.duration,
-            image: req.body.name,
-            description: req.body.description
+            name: req.body.data.name,
+            duration: req.body.data.duration,
+            image: req.body.data.name,
+            description: req.body.data.description
         })
         await courseMod.save()
 
