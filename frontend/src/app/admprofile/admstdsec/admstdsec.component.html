@@ -1,9 +1,10 @@
 <div class="divhome">
+  <button id="bt1" class="btn btn-outline-danger" (click)="logout()">Logout</button>
   <h1>HELLO ADMIN !!!</h1>
 <img src="assets/images/admin1.jpg" alt="logo"> 
   </div>
   <div>
-    <h2>Student list</h2>
+    <h2>STUDENT LIST</h2>
     <table>
         <tr>
           <th>name</th>
@@ -15,7 +16,7 @@
           <td>{{data.firstname}}</td>
           <td>{{data.course}}</td>
           <td>{{data.email}}</td>
-          <td><button>remove</button></td>
+          <td><button class="btn">remove</button></td>
         </tr>
       </table>
   </div>
