@@ -19,6 +19,8 @@ import { AdmcrssecComponent } from './admprofile/admcrssec/admcrssec.component';
 import { TcourseComponent } from './trnprofile/tcourse/tcourse.component';
 import { TstudentComponent } from './trnprofile/tstudent/tstudent.component';
 import { AddCourseComponent } from './admprofile/admcrssec/add-course/add-course.component';
+import { AddstudentComponent } from './addstudent/addstudent.component';
+import { AddtrainerComponent } from './addtrainer/addtrainer.component';
 
 
 const routes: Routes = [
@@ -44,7 +46,9 @@ children:[
 {path:'admstdsec',component:AdmstdsecComponent},
 {path:'admcrssec',component:AdmcrssecComponent},
 {path:'addCourse',component:AddCourseComponent},
-{path:'edit/:id',component:AddCourseComponent}
+{path:'edit/:id',component:AddCourseComponent},
+{path:'addstudent',component:AddstudentComponent},
+{path:'addtrainer',component:AddtrainerComponent}
 
 ];
 
