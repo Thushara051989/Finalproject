@@ -8,11 +8,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  sendStdMail(url:any,data:any){
-    return this.http.post(url,data)
-  }
-
-  sendTrnrMail(url:any,data:any){
+  sendMail(url:any,data:any){
     return this.http.post(url,data)
   }
 

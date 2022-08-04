@@ -14,21 +14,21 @@ export class CourseService {
     return this.http.get<any>('http://localhost:3000/course')
   }
 
-  // createbook(data:any){
-  //   return this.http.post<any>('books',{data})
-  // }
+  createCourse(data:any){
+    return this.http.post<any>('http://localhost:3000/course/add',{data})
+  }
 
-  // displayBooksById(id:any){
+  displayCourseById(id:any){
 
-  //   return this.http.get<any>(`books/${id}`)
+    return this.http.get<any>(`http://localhost:3000/course/${id}`)
 
-  // }
+  }
 
-  // updateBook(id:any,data:any){
-  //   return this.http.put<any>(`books/${id}`,data)
-  // }
+  updateCourse(id:any,data:any){
+    return this.http.put<any>(`http://localhost:3000/course/${id}`,data)
+  }
 
-  // deleteBook(id:any){
-  //   return this.http.delete(`books/${id}`)
-  // }
+  deleteCourse(id:any){
+    return this.http.delete(`http://localhost:3000/course/${id}`)
+  }
 }

@@ -12,15 +12,13 @@
           <th>name</th>
           <th>Course</th>
           <th>Email</th>
-          <th>Add</th>
           <th>action</th>
         </tr>
         <tr *ngFor="let data of studentArray">
           <td>{{data.firstname}}</td>
           <td>{{data.course}}</td>
           <td>{{data.email}}</td>
-          <td><button class="btn" >Add</button></td>
-          <td><button class="btn" (click)="onDelete(data._id)">remove</button></td>
+          <td><button class="btn" (click)="removeStd(data._id)">remove access</button></td>
         </tr>
       </table>
   </div>

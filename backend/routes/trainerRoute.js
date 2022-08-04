@@ -3,7 +3,8 @@ const router = express.Router()
 const trainerModel = require('../src/model/trainerModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const checkAuth=require('../middleware/check_trnAuth')
+const checkAuth = require('../middleware/check_trnAuth')
+const mongoose = require('mongoose')
 
 
 router.post('/signUp', (req, res) => {
@@ -127,51 +128,83 @@ router.post('/login', (req, res) => {
         })
 })
 
- router.get('/profile',checkAuth,(req,res)=>{
+
+router.get('/profile', checkAuth, (req, res) => {
 
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
 
-    const userId=req.userData.userId
+    const userId = req.userData.userId
     trainerModel.findById(userId)
-    .exec()
-    .then((result)=>{
-        res.json({
-            success:1,
-            data:result
+        .exec()
+        .then((result) => {
+            res.json({
+                success: 1,
+                data: result
+            })
         })
-    })
-    .catch(err=>{
+        .catch(err => {
+            res.json({
+                success: 0,
+                message: 'server error'
+            })
+        })
+})
+
+router.get('/:id',async(req,res)=>{
+    let id=req.params.id
+
+    let ValidId=mongoose.Types.ObjectId.isValid(id)
+    if(ValidId){
+        try{
+
+            let singleTrainer=await trainerModel.findById({_id:id})
+            res.json({
+                success:1,
+                message:'single student listed',
+                item:singleTrainer
+            })
+
+
+        }
+        catch(err){
+            res.json({
+                            success:0,
+                            message:'error occured while listing single student'+err
+                    })
+        }
+
+    }
+    else{
         res.json({
             success:0,
-            message:'server error'
+            message:'invalid id'
         })
-    })
 
-    router.delete('/:id',async (req,res)=>{
-        let id=req.params.id
-    
-        let validId=mongoose.Types.ObjectId.isValid(id)
-        if (validId){
-            try{
-                await trainerModel.deleteOne({_id:id})
-                res.json({
-                    success:1,
-                    message:'Trainer deleted successsfully'
-                })
-            }
-            catch(err){
-    
-                res.json({
-                    success:0,
-                    message:'error occured while deleting'+err
-                })
-    
-            }
+    }
+})
+
+router.delete('/:id', async (req, res) => {
+    let id = req.params.id
+
+    let validId = mongoose.Types.ObjectId.isValid(id)
+    if (validId) {
+        try {
+            await trainerModel.deleteOne({ _id: id })
+            res.json({
+                success: 1,
+                message: 'trainer removed successsfully'
+            })
         }
-    })
- 
+        catch (err) {
 
+            res.json({
+                success: 0,
+                message: 'error occured while removing' + err
+            })
+
+        }
+    }
 })
 
 

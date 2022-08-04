@@ -1,10 +1,12 @@
 <div class="admin">
 <div class="divhome">
+  
   <button id="bt1" class="btn btn-outline-danger" (click)="logout()">Logout</button>
   <button id="bt2" class="btn btn-outline-danger" routerLink="/admprofile">Back</button>
     <h1>HELLO ADMIN !!!</h1>
   <img src="assets/images/admin1.jpg" alt="logo"> 
     </div>
+    <button class="btn btn-primary"routerLink="/addCourse">Add Course</button>
     <div>
         <div class="main">
             <ul class="cards" *ngFor="let data of courseArray">
@@ -15,8 +17,8 @@
                     <h2 class="card_title1">{{data.name}}</h2>
                     <h3 class="card_title">{{data.duration}}</h3>
                     <p class="card_text">{{data.description}}</p>
-                    <button class="btn btn-outline-danger">update</button>
-                    <button class="btn btn-outline-danger">delete</button>
+                    <button class="btn btn-outline-danger"(click)="navigateToEdit(data._id)">update</button>
+                    <button class="btn btn-outline-danger" (click)="navigateToDelete(data._id)">delete</button>
                   </div>
                 </div>
               </li>

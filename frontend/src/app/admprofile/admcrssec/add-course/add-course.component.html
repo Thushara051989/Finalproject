@@ -1,0 +1,47 @@
+<div class="image-main" >
+    <div class="container">
+    <form #courseForm="ngForm" (ngSubmit)="courseForm.valid&&onAddCourse()">
+        <div class="row">
+            <div class="col-25">
+              <label>Course Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" required #name="ngModel" name="name" placeholder="Course name" [(ngModel)]="course.name">
+              <small class="text-danger" *ngIf="courseForm.submitted&&name.errors?.required">Course Name Required</small>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-25">
+              <label for="fname">Course Duration</label>
+            </div>
+            <div class="col-75">
+              <input type="text" required #duration="ngModel" name="duration" placeholder="Course Duration" [(ngModel)]="course.duration">
+              <small class="text-danger" *ngIf="courseForm.submitted&&duration.errors?.required">course duration Required</small>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label>Course image</label>
+            </div>
+            <div class="col-75">
+              <input type="text" required #image="ngModel"  name="image" placeholder="Course image.." [(ngModel)]="course.image">
+              <small class="text-danger" *ngIf="courseForm.submitted&&image.errors?.required">Course image Required</small>
+            </div>
+          </div>
+        <div class="row">
+        <div class="col-25">
+          <label>Course description </label>
+        </div>
+        <div class="col-75">
+          <textarea type="text" id="fname" #description="ngModel" required name="description" placeholder="Description.." [(ngModel)]="course.description" style="height:200px"></textarea>
+          <small class="text-danger" *ngIf="courseForm.submitted&&description.errors?.required">Description Required</small>
+        </div>
+      </div>
+    
+      <div class="row">
+        <button type="submit">Add Book</button>
+      </div>
+    </form>
+  </div>
+
+</div>

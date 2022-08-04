@@ -18,6 +18,27 @@ export class AdmcrssecComponent implements OnInit {
       
     })
   }
+
+  navigateToEdit(id:any){
+    this.router.navigate([`/edit/${id}`])
+    }
+
+    navigateToDelete(id:any){
+      if(confirm('are you sure want to delete?')){
+        this.courseService.deleteCourse(id).subscribe((res:any)=>{
+          if(res.success===1){
+      
+            this.ngOnInit()
+      
+          }
+        })
+    
+      }
+    
+      
+    
+    }
+
   logout(){
     localStorage.clear()
     this.router.navigate(['/'])
