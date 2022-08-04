@@ -15,6 +15,7 @@ import { SsettingsComponent } from './profile/ssettings/ssettings.component';
 import { TrnprofileComponent } from './trnprofile/trnprofile.component';
 import { AdmtrnsecComponent } from './admprofile/admtrnsec/admtrnsec.component';
 
+
 const routes: Routes = [
 {path:'',component:HomeComponent},
 {path:'login',component:LoginComponent},
