@@ -68,13 +68,15 @@ export class SignUpComponent implements OnInit {
         this.isProcessing = false
         this.toast.success('Registration  SuccessFull', 'Success')
 
-        this.auth.sendStdMail('http://localhost:3000/sendstdmail',formData).subscribe(
-          data=>{
-            let res:any=data
-            console.log(`${formData.firstname} is successfully registered`);
-            
-          }
-        )
+        this.auth.sendMail('http://localhost:3000/mail',formData).subscribe(
+        data=>{
+          let res:any=data
+          console.log(`${formData.firstname} is successfully registered`);
+          
+        }
+      )
+
+        
 
         this.router.navigate(['/login'])
       }

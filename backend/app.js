@@ -4,8 +4,6 @@ const port=process.env.port || 3000
 const mongoose=require('mongoose')
 const nodemailer=require('nodemailer')
 
-mongoose
-
 
 const adminRouter=require('./routes/adminRoute')
 const trainerRouter=require('./routes/trainerRoute')
@@ -37,45 +35,7 @@ app.use('/student',studentRouter)
 app.use('/course',courseRouter)
 
 
-app.post('/sendstdmail',(req,res)=>{
-    console.log('request came');
-    let userstd=req.body
-
-    sendMail(userstd,info=>{
-        console.log(`The mail has been send and the id is ${info.messageId}`)
-        res.send(info)
-    })
-})
-
-async function sendMail(userstd,callback){
-    let transporter=nodemailer.createTransport({
-        host:'smtp.gmail.com',
-        port:587,
-        secure:false,
-        auth:{
-            user:'jishnupunathil000@gmail.com',
-            pass:'onoomagdjflksnuz'
-
-        }
-    })
-
-    let mailOptions={
-        from:'GURUKUL Adminstrator',
-        to:userstd.email,
-        subject:'Registration Successfull',
-        html:`<h2>Dear ${userstd.firstname} ${userstd.lastname},</h2><br>
-        <h4>Thank You for registering in Gurukul. For accessing your course kindly login to the students section.</h4><br><br>
-        <h3> Thank you from ICTAK`
-    }
-
-    let info=await transporter.sendMail(mailOptions)
-
-    callback(info)
-}
-
-
-
-app.post('/trainermail',(req,res)=>{
+app.post('/mail',(req,res)=>{
     console.log('request came');
     let user=req.body
 
@@ -100,9 +60,10 @@ async function sendMail(user,callback){
     let mailOptions={
         from:'GURUKUL Adminstrator',
         to:user.email,
-        subject:'Trainer login details',
+        subject:'GURUKUL login details',
         html:`<h2>Dear ${user.firstname} ${user.lastname},</h2><br>
-        <h4> kindly login as a trainer with the credential listed below</h4>
+        <h4> You are now a part of this community<br>
+        kindly login  with the credential listed below</h4>
         <h3>UserEmail: ${user.email}</h3>
         <h3>password: ${user.password}</h3><br><br>
         <h3> Thank you from ICTAK`
