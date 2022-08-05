@@ -6,6 +6,9 @@
 <img src="assets/images/admin1.jpg" alt="logo"> 
 
   </div>
+  <div>
+    <button  class="btn btn-primary"routerLink="/addtrainer">Add Trainer</button>
+  </div>
   
   <div>
     <h2>TRAINER LIST</h2>
@@ -15,15 +18,13 @@
           <th>Name</th>
           <th>Course</th>
           <th>Email</th>
-          <th>Add</th>
           <th>Action</th>
         </tr>
         <tr *ngFor="let data of trainerArray">
           <td>{{data.firstname}}</td>
           <td>{{data.course}}</td>
           <td>{{data.email}}</td>
-          <td><button class="btn" >Add</button></td>
-          <td><button class="btn" (click)="onDelete(data._id)">remove</button></td>
+          <td><button class="btn" (click)="removeTrainer(data._id)">remove</button></td>
         </tr>
       </table>
     </div>

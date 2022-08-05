@@ -1,20 +1,7 @@
-<!-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card mt-5 p-3 shadow">
-                <h3>Hello,{{data.firstname}}</h3>
-                <p>Email:{{data.email}}</p>
-                <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
-            </div>
-        </div>
-
-    </div>
-</div> -->
 <div class="main">
 
     <div class="left">
        <div class="sidebar">
-        <!-- <div class="sidebar col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark"> -->
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
             <div>
                     <img src="https://th.bing.com/th/id/R.9d49d8c751a354475fee49bbd877fecf?rik=Gm2wixzvs5YQIQ&pid=ImgRaw&r=0" alt="img" width="30" height="30" class="rounded-circle">
@@ -48,13 +35,12 @@
                         <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Students</span> </a>
                 </li>
                 <li>
-                    <a routerLink="/login" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                        <i class="fs-4 bi-person-dash"></i> <span class="ms-1 d-none d-sm-inline">Logout</span> </a>
+                    <a  data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-person-dash"></i> <span class="ms-1 d-none d-sm-inline" (click)="logout()">Logout</span> </a>
                 </li>
             </ul>
             <hr>   
         </div>
-    <!-- </div> -->
        </div>
     </div>
 

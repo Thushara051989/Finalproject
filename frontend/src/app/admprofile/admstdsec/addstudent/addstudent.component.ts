@@ -1,17 +1,16 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AuthService } from '../service/auth.service';
-
+import { AuthService } from '../../../service/auth.service';
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  selector: 'app-addstudent',
+  templateUrl: './addstudent.component.html',
+  styleUrls: ['./addstudent.component.css']
 })
-export class SignUpComponent implements OnInit {
+export class AddstudentComponent implements OnInit {
 
+  
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router, private toast: ToastrService) { }
 
   ngOnInit() {
@@ -78,7 +77,7 @@ export class SignUpComponent implements OnInit {
 
         
 
-        this.router.navigate(['/login'])
+        this.router.navigate(['/admstdsec'])
       }
       else {
 
@@ -98,7 +97,6 @@ export class SignUpComponent implements OnInit {
   }
 
   
-
 
 
 

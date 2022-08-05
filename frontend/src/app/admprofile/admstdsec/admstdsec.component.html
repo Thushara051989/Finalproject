@@ -4,6 +4,7 @@
   <h1>HELLO ADMIN !!!</h1>
 <img src="assets/images/admin1.jpg" alt="logo"> 
   </div>
+  <button id="btn3" class="btn btn-primary"routerLink="/addstudent">Add Student</button>
   <div>
     <br><br>
     <h2>STUDENT LIST</h2>
@@ -12,15 +13,13 @@
           <th>name</th>
           <th>Course</th>
           <th>Email</th>
-          <th>Add</th>
           <th>action</th>
         </tr>
         <tr *ngFor="let data of studentArray">
           <td>{{data.firstname}}</td>
           <td>{{data.course}}</td>
           <td>{{data.email}}</td>
-          <td><button class="btn" >Add</button></td>
-          <td><button class="btn" (click)="onDelete(data._id)">remove</button></td>
+          <td><button class="btn" (click)="removeStd(data._id)">remove access</button></td>
         </tr>
       </table>
   </div>

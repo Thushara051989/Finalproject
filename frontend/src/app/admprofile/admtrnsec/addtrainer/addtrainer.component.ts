@@ -1,21 +1,17 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder ,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AuthService } from '../service/auth.service';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  selector: 'app-addtrainer',
+  templateUrl: './addtrainer.component.html',
+  styleUrls: ['./addtrainer.component.css']
 })
-export class SignUpComponent implements OnInit {
+export class AddtrainerComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router, private toast: ToastrService) { }
-
-  ngOnInit() {
-  }
   signHide = true
   signSubmit = true
   submitted = false
@@ -54,52 +50,46 @@ export class SignUpComponent implements OnInit {
     }
   )
 
+  ngOnInit(): void {
+  }
 
-  onSign() {
+  ontrnSign() {
 
     this.isProcessing = true
     const formData = this.signUpForm.value
-
-
-    this.auth.postStudent(formData).subscribe((res) => {
+  
+  
+    this.auth.postTrainer(formData).subscribe((res) => {
       console.log(res);
       if (res.success) {
-
+  
         this.isProcessing = false
         this.toast.success('Registration  SuccessFull', 'Success')
-
         this.auth.sendMail('http://localhost:3000/mail',formData).subscribe(
-        data=>{
-          let res:any=data
-          console.log(`${formData.firstname} is successfully registered`);
-          
-        }
-      )
-
+          data=>{
+            let res:any=data
+            console.log(`${formData.firstname} is successfully registered`);
+            
+            
+          }
+        )
+        this.router.navigate(['/admtrnsec'])
         
-
-        this.router.navigate(['/login'])
       }
       else {
-
+  
         if (this.submitted = true) {
           this.isProcessing = false
-
+  
           this.toast.error(res.message, 'Failed')
         }
-
-
+  
+  
       }
     }
-
-    )
-
-
-  }
-
   
-
-
-
-
+    )
+  
+  
+  }
 }

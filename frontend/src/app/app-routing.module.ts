@@ -19,6 +19,12 @@ import { AdmcrssecComponent } from './admprofile/admcrssec/admcrssec.component';
 import { SexamsComponent } from './profile/sexams/sexams.component';
 import { SfeedbacksComponent } from './profile/sfeedbacks/sfeedbacks.component';
 import { SassignmentsComponent } from './profile/sassignments/sassignments.component';
+import { TcourseComponent } from './trnprofile/tcourse/tcourse.component';
+import { TstudentComponent } from './trnprofile/tstudent/tstudent.component';
+import { AddCourseComponent } from './admprofile/admcrssec/add-course/add-course.component';
+import { AddstudentComponent } from './admprofile/admstdsec/addstudent/addstudent.component';
+import { AddtrainerComponent } from './admprofile/admtrnsec/addtrainer/addtrainer.component';
+
 
 
 const routes: Routes = [
@@ -38,10 +44,18 @@ children:[
   {path:'sassignments',component:SassignmentsComponent}
 ]},
 {path:'admprofile',component:AdmprofileComponent},
-{path:'trnprofile',canActivate:[AuthGuard],component:TrnprofileComponent},
+{path:'trnprofile',canActivate:[AuthGuard],component:TrnprofileComponent,
+children:[
+  {path:'tcourse',component:TcourseComponent},
+  {path:'tstudent',component:TstudentComponent}
+]},
 {path:'admtrnsec',component:AdmtrnsecComponent},
 {path:'admstdsec',component:AdmstdsecComponent},
-{path:'admcrssec',component:AdmcrssecComponent}
+{path:'admcrssec',component:AdmcrssecComponent},
+{path:'addCourse',component:AddCourseComponent},
+{path:'edit/:id',component:AddCourseComponent},
+{path:'addstudent',component:AddstudentComponent},
+{path:'addtrainer',component:AddtrainerComponent}
 
 ];
 
