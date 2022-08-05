@@ -16,6 +16,9 @@ import { TrnprofileComponent } from './trnprofile/trnprofile.component';
 import { AdmtrnsecComponent } from './admprofile/admtrnsec/admtrnsec.component';
 import { AdmstdsecComponent } from './admprofile/admstdsec/admstdsec.component';
 import { AdmcrssecComponent } from './admprofile/admcrssec/admcrssec.component';
+import { SexamsComponent } from './profile/sexams/sexams.component';
+import { SfeedbacksComponent } from './profile/sfeedbacks/sfeedbacks.component';
+import { SassignmentsComponent } from './profile/sassignments/sassignments.component';
 
 
 const routes: Routes = [
@@ -29,7 +32,10 @@ children:[
   {path:'sgrade',component:SgradeComponent},
   {path:'smessages', component:SmessagesComponent},
   {path:'sprofile',component:SprofileComponent},
-  {path:'ssettings',component:SsettingsComponent}
+  {path:'ssettings',component:SsettingsComponent},
+  {path:'sexams',component:SexamsComponent},
+  {path:'sfeedbacks',component:SfeedbacksComponent},
+  {path:'sassignments',component:SassignmentsComponent}
 ]},
 {path:'admprofile',component:AdmprofileComponent},
 {path:'trnprofile',canActivate:[AuthGuard],component:TrnprofileComponent},
