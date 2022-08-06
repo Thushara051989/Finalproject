@@ -24,6 +24,7 @@ import { TstudentComponent } from './trnprofile/tstudent/tstudent.component';
 import { AddCourseComponent } from './admprofile/admcrssec/add-course/add-course.component';
 import { AddstudentComponent } from './admprofile/admstdsec/addstudent/addstudent.component';
 import { AddtrainerComponent } from './admprofile/admtrnsec/addtrainer/addtrainer.component';
+import { ScoursesComponent } from './profile/scourses/scourses.component';
 
 
 
@@ -35,13 +36,18 @@ const routes: Routes = [
 {path:'profile',canActivate:[AuthGuard],component:ProfileComponent, 
 children:[
   {path:'sdashboard',component:SdashboardComponent},
+  {path:'sdashboard/scourses',component:ScoursesComponent},
+  {path:'sdashboard/sprofile',component:SprofileComponent},
+  {path:'sdashboard/ssettings',component:SsettingsComponent},
   {path:'sgrade',component:SgradeComponent},
   {path:'smessages', component:SmessagesComponent},
   {path:'sprofile',component:SprofileComponent},
+  {path:'sprofile/scourses', component:ScoursesComponent},
   {path:'ssettings',component:SsettingsComponent},
   {path:'sexams',component:SexamsComponent},
   {path:'sfeedbacks',component:SfeedbacksComponent},
-  {path:'sassignments',component:SassignmentsComponent}
+  {path:'sdashboard/sfeedbacks',component:SfeedbacksComponent},
+  {path:'sassignments',component:SassignmentsComponent},
 ]},
 {path:'admprofile',component:AdmprofileComponent},
 {path:'trnprofile',canActivate:[AuthGuard],component:TrnprofileComponent,

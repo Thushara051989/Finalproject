@@ -1,1 +1,23 @@
-<p>sexams works!</p>
+<p>Exam Submission Form</p>
+<form class="was-validated">
+    <div class="mb-3">
+      <label for="validationTextarea">Exam</label>
+      <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Type description" required></textarea>
+      <div class="invalid-feedback">
+        Please enter the answers in the text area.
+      </div>
+    </div>
+  
+    <div class="custom-control custom-checkbox mb-3">
+      <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+      <label class="custom-control-label" for="customControlValidation1">Answers submitted</label>
+      <div class="invalid-feedback">Please click on the checkbox</div>
+    </div>
+  
+  
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+      <label class="custom-file-label" for="validatedCustomFile"></label>
+      <div class="invalid-feedback">Answers upload here</div>
+    </div>
+  </form>

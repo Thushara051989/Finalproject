@@ -42,6 +42,7 @@ import { SfeedbacksComponent } from './profile/sfeedbacks/sfeedbacks.component';
 import { AddCourseComponent } from './admprofile/admcrssec/add-course/add-course.component';
 import { AddstudentComponent } from './admprofile/admstdsec/addstudent/addstudent.component';
 import { AddtrainerComponent } from './admprofile/admtrnsec/addtrainer/addtrainer.component';
+import { ScoursesComponent } from './profile/scourses/scourses.component';
 
 
 
@@ -72,7 +73,8 @@ import { AddtrainerComponent } from './admprofile/admtrnsec/addtrainer/addtraine
     SfeedbacksComponent,
     AddCourseComponent,
     AddstudentComponent,
-    AddtrainerComponent
+    AddtrainerComponent,
+    ScoursesComponent
   ],
   imports: [
     BrowserModule,
