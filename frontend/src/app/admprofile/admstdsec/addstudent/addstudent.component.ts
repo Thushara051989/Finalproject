@@ -77,7 +77,7 @@ export class AddstudentComponent implements OnInit {
 
         
 
-        this.router.navigate(['/admstdsec'])
+        this.router.navigate(['/admprofile/admstdsec'])
       }
       else {
 
