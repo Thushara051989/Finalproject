@@ -47,7 +47,7 @@ export class AddCourseComponent implements OnInit {
  this.courseService.createCourse(this.course).subscribe((res)=>{
    console.log({res});
  
-     this.router.navigate(['/admcrssec'])
+     this.router.navigate(['admprofile/admcrssec'])
    
  })
    }

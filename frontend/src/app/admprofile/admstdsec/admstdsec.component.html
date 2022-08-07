@@ -1,12 +1,4 @@
-<div class="divhome">
-  <button id="bt1" class="btn btn-outline-danger" (click)="logout()">Logout</button>
-  <button id="bt2" class="btn btn-outline-danger" routerLink="/admprofile">Back</button>
-  <h1>HELLO ADMIN !!!</h1>
-<img src="assets/images/admin1.jpg" alt="logo"> 
-  </div>
-  <button id="btn3" class="btn btn-primary"routerLink="/addstudent">Add Student</button>
-  <div>
-    <br><br>
+
     <h2>STUDENT LIST</h2>
     <table>
         <tr>
@@ -21,5 +13,8 @@
           <td>{{data.email}}</td>
           <td><button class="btn" (click)="removeStd(data._id)">remove access</button></td>
         </tr>
-      </table>
-  </div>
+      </table><br>
+      <div style="text-align:center ;">
+        <button class="btn btn-primary" routerLink="/addstudent">Add Student</button>
+    </div>
+  
