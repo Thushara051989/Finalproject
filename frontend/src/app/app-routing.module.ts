@@ -49,15 +49,17 @@ children:[
   {path:'sdashboard/sfeedbacks',component:SfeedbacksComponent},
   {path:'sassignments',component:SassignmentsComponent},
 ]},
-{path:'admprofile',component:AdmprofileComponent},
+{path:'admprofile',canActivate:[AuthGuard],component:AdmprofileComponent,
+children:[
+  {path:'admtrnsec',component:AdmtrnsecComponent},
+  {path:'admstdsec',component:AdmstdsecComponent},
+  {path:'admcrssec',component:AdmcrssecComponent},
+]},
 {path:'trnprofile',canActivate:[AuthGuard],component:TrnprofileComponent,
 children:[
   {path:'tcourse',component:TcourseComponent},
-  {path:'tstudent',component:TstudentComponent}
+  {path:'tstudent',component:TstudentComponent},
 ]},
-{path:'admtrnsec',component:AdmtrnsecComponent},
-{path:'admstdsec',component:AdmstdsecComponent},
-{path:'admcrssec',component:AdmcrssecComponent},
 {path:'addCourse',component:AddCourseComponent},
 {path:'edit/:id',component:AddCourseComponent},
 {path:'addstudent',component:AddstudentComponent},
