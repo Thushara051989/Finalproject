@@ -10,10 +10,10 @@
         <div class="container-fluid">
         <img src="https://th.bing.com/th/id/R.9d49d8c751a354475fee49bbd877fecf?rik=Gm2wixzvs5YQIQ&pid=ImgRaw&r=0" alt="img" width="30" height="30" class="rounded-circle">
         
-          <form class="d-flex">
+          <!-- <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> -->
         </div>
       </nav>
 </div>
@@ -30,13 +30,13 @@
     <div class="sidebar">
         <a routerLink="sdashboard"><i class="fa fa-fw fa-home"></i> Dashboard</a>
         <a routerLink="sprofile"><i class="fa fa-fw fa-user"></i> Profile</a>
-        <a routerLink="sgrade"><i class="fa fa-fw fa-graduation-cap"></i> Grade</a>
+        <!-- <a routerLink="sgrade"><i class="fa fa-fw fa-graduation-cap"></i> Grade</a> -->
         <a routerLink="sassignments"><i class="fa fa-fw fa-check"></i> Assignments</a>
         <a routerLink="sexams"><i class="fa fa-fw fa-pencil"></i> Exams</a>
-        <a routerLink="smessages"><i class="fa fa-fw fa-envelope"></i> Messages</a>
+        <!-- <a routerLink="smessages"><i class="fa fa-fw fa-envelope"></i> Messages</a> -->
         <a routerLink="sfeedbacks"><i class="fa fa-fw fa-commenting" ></i>  Feedbacks</a>
         <a routerLink="ssettings"><i class="fa fa-fw fa-wrench"></i> Settings</a>
-        <a href="#" onClick={this.logout}><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+        <a href="#" (click)="logout()"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
     </div>
  </div>
  <div class="right">

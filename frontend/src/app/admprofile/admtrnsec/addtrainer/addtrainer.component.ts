@@ -69,11 +69,11 @@ export class AddtrainerComponent implements OnInit {
           data=>{
             let res:any=data
             console.log(`${formData.firstname} is successfully registered`);
-            
+  
             
           }
         )
-        this.router.navigate(['/admtrnsec'])
+        this.router.navigate(['/admprofile/admtrnsec'])
         
       }
       else {
@@ -81,7 +81,7 @@ export class AddtrainerComponent implements OnInit {
         if (this.submitted = true) {
           this.isProcessing = false
   
-          this.toast.error(res.message, 'Failed')
+          this.toast.error('Email already registered', 'Failed')
         }
   
   

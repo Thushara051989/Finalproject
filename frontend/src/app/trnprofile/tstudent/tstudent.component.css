@@ -10,12 +10,11 @@ th, td {
   }
   tr:nth-child(even){background-color: #f2f2f2}
   .btn {
-    background-color: #ddd;
+    /* background-color: #ddd; */
     color: black;
     text-align: center;
     transition: 0.3s;
   }
-  
   .btn:hover {
     background-color:red;
     color: white;

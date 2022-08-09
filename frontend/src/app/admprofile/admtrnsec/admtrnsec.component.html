@@ -1,18 +1,9 @@
 
-<div class="divhome">
-  <button id="bt1" class="btn btn-outline-danger" (click)="logout()">Logout</button>
-  <button id="bt2" class="btn btn-outline-danger" routerLink="/admprofile">Back</button>
-  <h1>HELLO ADMIN !!!</h1>
-<img src="assets/images/admin1.jpg" alt="logo"> 
-
-  </div>
-  <div>
-    <button  class="btn btn-primary"routerLink="/addtrainer">Add Trainer</button>
-  </div>
   
-  <div>
+  
+  
     <h2>TRAINER LIST</h2>
-    <div style="overflow-x:auto;">
+     <div style="overflow-x:auto;">
     <table>
         <tr>
           <th>Name</th>
@@ -27,5 +18,8 @@
           <td><button class="btn" (click)="removeTrainer(data._id)">remove</button></td>
         </tr>
       </table>
+    </div><br>
+    <div  style="text-align:center;">
+      <button  class="btn btn-primary" routerLink="/addtrainer">Add Trainer</button>
     </div>
-  </div>
+  <!-- </div> -->

@@ -28,7 +28,7 @@
   }
   h2{
     text-shadow: #ddd;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     font-weight: bolder;
     margin-left: 10px;
   }

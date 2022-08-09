@@ -17,4 +17,28 @@
     text-align: center;
     
   }
+ .header-image{
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+ }
+
+ mat-card-header{
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
  
+ }
+ mat-card-title{
+  font-weight: bolder;
+  font-size: 500px;
+ }
+ img{
+  justify-content: center;
+  margin-left: 46%;
+  
+ }
+ mat-card-content{
+  font-size: larger;
+  font-weight: bold;
+ }

@@ -65,7 +65,7 @@ export class AddstudentComponent implements OnInit {
       if (res.success) {
 
         this.isProcessing = false
-        this.toast.success('Registration  SuccessFull', 'Success')
+        this.toast.success('Student added  SuccessFully', 'Success')
 
         this.auth.sendMail('http://localhost:3000/mail',formData).subscribe(
         data=>{
@@ -77,14 +77,14 @@ export class AddstudentComponent implements OnInit {
 
         
 
-        this.router.navigate(['/admstdsec'])
+        this.router.navigate(['/admprofile/admstdsec'])
       }
       else {
 
         if (this.submitted = true) {
           this.isProcessing = false
 
-          this.toast.error(res.message, 'Failed')
+          this.toast.error('Email Already registered', 'Failed')
         }
 
 
