@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-tcourse',
   templateUrl: './tcourse.component.html',
@@ -9,7 +10,7 @@ export class TcourseComponent implements OnInit {
   
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    
   }
-
 }
