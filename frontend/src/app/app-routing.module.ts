@@ -25,6 +25,8 @@ import { AddCourseComponent } from './admprofile/admcrssec/add-course/add-course
 import { AddstudentComponent } from './admprofile/admstdsec/addstudent/addstudent.component';
 import { AddtrainerComponent } from './admprofile/admtrnsec/addtrainer/addtrainer.component';
 import { ScoursesComponent } from './profile/scourses/scourses.component';
+import { TprofileComponent } from './trnprofile/tprofile/tprofile.component';
+import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 
 
 
@@ -54,11 +56,13 @@ children:[
   {path:'admtrnsec',component:AdmtrnsecComponent},
   {path:'admstdsec',component:AdmstdsecComponent},
   {path:'admcrssec',component:AdmcrssecComponent},
+  {path:'aprofile',component:AprofileComponent}
 ]},
 {path:'trnprofile',canActivate:[AuthGuard],component:TrnprofileComponent,
 children:[
   {path:'tcourse',component:TcourseComponent},
   {path:'tstudent',component:TstudentComponent},
+  {path:'tprofile',component:TprofileComponent}
 ]},
 {path:'addCourse',component:AddCourseComponent},
 {path:'edit/:id',component:AddCourseComponent},
