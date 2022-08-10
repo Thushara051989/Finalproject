@@ -8,11 +8,8 @@ import { StudentService } from 'src/app/service/student.service';
   styleUrls: ['./tstudent.component.css']
 })
 export class TstudentComponent implements OnInit {
-
- 
   studentArray:any=[]
   constructor(private studentservice:StudentService,private router:Router) { }
-
   ngOnInit() {
     this.studentservice.displayStudents().subscribe((res)=>{
       console.log(res);
