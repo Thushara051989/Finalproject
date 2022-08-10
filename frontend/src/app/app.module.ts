@@ -43,6 +43,8 @@ import { AddCourseComponent } from './admprofile/admcrssec/add-course/add-course
 import { AddstudentComponent } from './admprofile/admstdsec/addstudent/addstudent.component';
 import { AddtrainerComponent } from './admprofile/admtrnsec/addtrainer/addtrainer.component';
 import { ScoursesComponent } from './profile/scourses/scourses.component';
+import { TprofileComponent } from './trnprofile/tprofile/tprofile.component';
+import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 
 
 
@@ -74,7 +76,9 @@ import { ScoursesComponent } from './profile/scourses/scourses.component';
     AddCourseComponent,
     AddstudentComponent,
     AddtrainerComponent,
-    ScoursesComponent
+    ScoursesComponent,
+    TprofileComponent,
+    AprofileComponent
   ],
   imports: [
     BrowserModule,
