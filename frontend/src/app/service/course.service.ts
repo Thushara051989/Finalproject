@@ -31,4 +31,8 @@ export class CourseService {
   deleteCourse(id:any){
     return this.http.delete(`http://localhost:3000/course/${id}`)
   }
+
+  getMean(){
+    return this.http.get<any>('http://localhost:3000/mean')
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseService } from 'src/app/service/course.service';
 
 @Component({
   selector: 'app-scourses',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoursesComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private courseService:CourseService) { }
+  meanArray:any=[]
+  ngOnInit(){
+    this.courseService.getMean().subscribe(res=>{
+      console.log(res);
+      this.meanArray=res.item
+      
+    })
   }
 
 }

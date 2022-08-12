@@ -38,7 +38,7 @@ stdLogin(){
     if(res.success){
       localStorage.setItem('token',res.token)
       this.toast.success(res.message,'Success')
-    this.router.navigate(['/profile'])
+    this.router.navigate(['/profile/sprofile'])
     }
     else{
       this.toast.error(res.message,'failed')
@@ -59,7 +59,7 @@ trainerLogin(){
     if(res.success){
       localStorage.setItem('token',res.token)
       this.toast.success(res.message,'Success')
-    this.router.navigate(['/trnprofile'])
+    this.router.navigate(['/trnprofile/tprofile'])
     }
     else{
       this.toast.error(res.message,'failed')
@@ -81,7 +81,7 @@ adminlogin(){
     if(res.success){
       localStorage.setItem('token',res.token)
       this.toast.success(res.message,'Success')
-    this.router.navigate(['/admprofile'])
+    this.router.navigate(['/admprofile/aprofile'])
     }
     else{
       this.toast.error(res.message,'failed')
