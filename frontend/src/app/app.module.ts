@@ -46,6 +46,7 @@ import { ScoursesComponent } from './profile/scourses/scourses.component';
 import { TprofileComponent } from './trnprofile/tprofile/tprofile.component';
 import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 import { ThomeComponent } from './trnprofile/thome/thome.component';
+import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
 
 
 
@@ -80,7 +81,8 @@ import { ThomeComponent } from './trnprofile/thome/thome.component';
     ScoursesComponent,
     TprofileComponent,
     AprofileComponent,
-    ThomeComponent
+    ThomeComponent,
+    TcontentComponent
 
   ],
   imports: [
