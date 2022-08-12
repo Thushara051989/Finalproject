@@ -14,11 +14,11 @@ router.post('/add', async (req, res) => {
 
         const meanMod = new meanModel({
 
-            head: req.body.data.head,
-            subhead: req.body.data.subhead,
-            paragraph: req.body.data.paragraph,
-            title: req.body.data.title,
-            url: req.body.data.title
+            head: req.body.head,
+            subhead: req.body.subhead,
+            paragraph: req.body.paragraph,
+            title: req.body.title,
+            url: req.body.url
         })
         await meanMod.save()
 

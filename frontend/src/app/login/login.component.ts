@@ -38,7 +38,7 @@ stdLogin(){
     if(res.success){
       localStorage.setItem('token',res.token)
       this.toast.success(res.message,'Success')
-    this.router.navigate(['/profile'])
+    this.router.navigate(['/profile/sprofile'])
     }
     else{
       this.toast.error(res.message,'failed')
