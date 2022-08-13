@@ -1,0 +1,15 @@
+<div>
+    <h2>Feedbacks</h2>
+</div>
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Feeds</th>
+    </tr>
+    <tr *ngFor="let data of Data">
+      <td>{{data.name}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.feed}}</td>
+    </tr>
+  </table><br>

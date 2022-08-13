@@ -28,6 +28,7 @@ import { ScoursesComponent } from './profile/scourses/scourses.component';
 import { TprofileComponent } from './trnprofile/tprofile/tprofile.component';
 import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
+import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
 
 
 
@@ -64,7 +65,8 @@ children:[
   {path:'tcourse',component:TcourseComponent},
   {path:'tstudent',component:TstudentComponent},
   {path:'tprofile',component:TprofileComponent},
-  {path:'tcontent',component:TcontentComponent}
+  {path:'tcontent',component:TcontentComponent},
+  {path:'tfeedback',component:TfeedbackComponent}
 ]},
 {path:'addCourse',component:AddCourseComponent},
 {path:'edit/:id',component:AddCourseComponent},
