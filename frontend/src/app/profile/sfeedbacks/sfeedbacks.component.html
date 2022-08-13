@@ -1,4 +1,4 @@
-<h3>Feedback Form</h3>
+<!-- <h3>Feedback Form</h3>
 <form class="was-validated">
     <div class="mb-3">
       <label for="validationTextarea">Type your comments for our class</label>
@@ -32,4 +32,48 @@
       <label class="custom-file-label" for="validatedCustomFile">Choose file to upload</label>
       <div class="invalid-feedback">Upload feedback file </div>
     </div>
-  </form>
+  </form> -->
+<div class="form">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+        
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+            formControlName="name"
+            id="name" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+            <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+            <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
+        </div>
+    </div>
+     
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+            formControlName="email"
+            id="email" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+            <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
+        </div>
+    </div>
+     
+    <div class="form-group">
+        <label for="feed">Feedback</label>
+        <input 
+            formControlName="feed"
+            id="feed" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f['feed'].touched && f['feed'].invalid" class="alert alert-danger">
+            <div *ngIf="f['feed'].errors && f['feed'].errors['required']">Feedback is required.</div>
+        </div>
+    </div>
+    
+    <button class="btn btn-primary" [disabled]="form.invalid" type="submit">Submit</button>
+</form>
+</div>
