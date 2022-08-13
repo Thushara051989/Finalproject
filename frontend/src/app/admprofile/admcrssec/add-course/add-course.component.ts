@@ -39,7 +39,7 @@ export class AddCourseComponent implements OnInit {
        this.courseService.updateCourse(this.id,this.course).subscribe((res)=>{
          console.log({res});
          if(res.success===1){
-           this.router.navigate(['/admcrssec'])
+           this.router.navigate(['admprofile/admcrssec'])
          }
        })
  
