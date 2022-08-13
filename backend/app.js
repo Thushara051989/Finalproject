@@ -10,6 +10,7 @@ const trainerRouter=require('./routes/trainerRoute')
 const studentRouter=require('./routes/studentRoute')
 const courseRouter=require('./routes/courseRoute')
 const meanRouter=require('./routes/meanRoute')
+const feedbackRouter=require('./routes/feedbackRoute')
 
 
 
@@ -35,6 +36,7 @@ app.use('/trainer',trainerRouter)
 app.use('/student',studentRouter)
 app.use('/course',courseRouter)
 app.use('/mean',meanRouter)
+app.use('/feedback',feedbackRouter)
 
 
 app.post('/mail',(req,res)=>{

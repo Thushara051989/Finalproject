@@ -47,6 +47,7 @@ import { TprofileComponent } from './trnprofile/tprofile/tprofile.component';
 import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 import { ThomeComponent } from './trnprofile/thome/thome.component';
 import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
+import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
 
 
 
@@ -82,7 +83,8 @@ import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
     TprofileComponent,
     AprofileComponent,
     ThomeComponent,
-    TcontentComponent
+    TcontentComponent,
+    TfeedbackComponent
 
   ],
   imports: [
