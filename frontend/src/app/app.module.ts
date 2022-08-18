@@ -115,6 +115,7 @@ import { ExamsDirective } from './profile/sexams/exam/exams.directive';
     ToastrModule.forRoot(),
     NgbModule,
     FileUploadModule
+
   ],
   
   providers: [AuthService,CourseService,FileService],
