@@ -11,7 +11,9 @@ const studentRouter=require('./routes/studentRoute')
 const courseRouter=require('./routes/courseRoute')
 const meanRouter=require('./routes/meanRoute')
 const feedbackRouter=require('./routes/feedbackRoute')
-
+var filesRoutes = require('./routes/files');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
 
 
 const bodyParser=require('body-parser')
@@ -21,8 +23,9 @@ const cors = require('cors')
 
 app.use(cors())
 app.use(bodyParser.json())
-
-
+app.use(logger('dev'));
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: false }));
  mongoose.connect('mongodb+srv://jishnu:5YZ18pPqWACLq8CG@cluster0.otjh9.mongodb.net/lms_db?retryWrites=true&w=majority')
  .then((res)=>{
     console.log('database connected successfuly')
@@ -37,7 +40,16 @@ app.use('/student',studentRouter)
 app.use('/course',courseRouter)
 app.use('/mean',meanRouter)
 app.use('/feedback',feedbackRouter)
-
+app.use('/file',filesRoutes);
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
+    next();
+  });
+  app.use(function(req, res, next) {
+    res.render('index');
+  });
 
 app.post('/mail',(req,res)=>{
     console.log('request came');

@@ -48,7 +48,7 @@ import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 import { ThomeComponent } from './trnprofile/thome/thome.component';
 import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
 import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
-
+import {FileUploadModule} from 'ng2-file-upload';
 
 
 @NgModule({
@@ -102,7 +102,7 @@ import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
     MatSelectModule,
     FormsModule,
     ToastrModule.forRoot(),
-    NgbModule
+    NgbModule,FileUploadModule
   ],
   providers: [AuthService,CourseService],
   bootstrap: [AppComponent]
