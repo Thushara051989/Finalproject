@@ -48,6 +48,8 @@ import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 import { ThomeComponent } from './trnprofile/thome/thome.component';
 import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
 import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
+import { ExamComponent } from './profile/sexams/exam/exam.component';
+import { ExamsDirective } from './profile/sexams/exam/exams.directive';
 
 
 
@@ -84,7 +86,9 @@ import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
     AprofileComponent,
     ThomeComponent,
     TcontentComponent,
-    TfeedbackComponent
+    TfeedbackComponent,
+    ExamComponent,
+    ExamsDirective
 
   ],
   imports: [
