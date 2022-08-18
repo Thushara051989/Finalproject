@@ -24,8 +24,11 @@
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.2.0",
+<<<<<<< HEAD
+=======
     "cors": "^2.8.5",
     "file": "^0.2.2",
+>>>>>>> master
     "file-saver": "^2.0.5",
     "jquery": "^3.6.0",
     "jquery.easing": "^1.4.1",

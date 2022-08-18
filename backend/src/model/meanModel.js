@@ -5,8 +5,6 @@ const meanSchema = new mongoose.Schema({
     head:{type:String},
     subhead:{type:String},
     paragraph:{type:String},
-    title:{type:String},
-    url:{type:String}
 
 
     

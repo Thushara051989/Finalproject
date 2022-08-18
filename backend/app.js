@@ -11,9 +11,14 @@ const studentRouter=require('./routes/studentRoute')
 const courseRouter=require('./routes/courseRoute')
 const meanRouter=require('./routes/meanRoute')
 const feedbackRouter=require('./routes/feedbackRoute')
+<<<<<<< HEAD
+const fileRouter=require('./routes/file')
+
+=======
 var filesRoutes = require('./routes/files');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+>>>>>>> master
 
 
 const bodyParser=require('body-parser')
@@ -40,6 +45,11 @@ app.use('/student',studentRouter)
 app.use('/course',courseRouter)
 app.use('/mean',meanRouter)
 app.use('/feedback',feedbackRouter)
+<<<<<<< HEAD
+
+  
+app.use('/file',fileRouter)
+=======
 app.use('/file',filesRoutes);
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -50,6 +60,7 @@ app.use(function(req, res, next) {
   app.use(function(req, res, next) {
     res.render('index');
   });
+>>>>>>> master
 
 app.post('/mail',(req,res)=>{
     console.log('request came');

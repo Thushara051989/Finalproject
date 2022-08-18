@@ -48,13 +48,15 @@ import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 import { ThomeComponent } from './trnprofile/thome/thome.component';
 import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
 import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
-<<<<<<< HEAD
-import {FileUploadModule} from 'ng2-file-upload';
-=======
+
+import { AssignmentComponent } from './trnprofile/tcourse/assignment/assignment.component';
+import { FileUploadModule } from 'ng2-file-upload';
+import { FileService } from './service/file.service';
+
 import { ExamComponent } from './profile/sexams/exam/exam.component';
 import { ExamsDirective } from './profile/sexams/exam/exams.directive';
 
->>>>>>> master
+
 
 
 @NgModule({
@@ -91,10 +93,11 @@ import { ExamsDirective } from './profile/sexams/exam/exams.directive';
     ThomeComponent,
     TcontentComponent,
     TfeedbackComponent,
+    AssignmentComponent,
     ExamComponent,
     ExamsDirective
-
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -110,9 +113,12 @@ import { ExamsDirective } from './profile/sexams/exam/exams.directive';
     MatSelectModule,
     FormsModule,
     ToastrModule.forRoot(),
-    NgbModule,FileUploadModule
+    NgbModule,
+    FileUploadModule
+
   ],
-  providers: [AuthService,CourseService],
+  
+  providers: [AuthService,CourseService,FileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

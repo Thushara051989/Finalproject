@@ -17,8 +17,7 @@ router.post('/add', async (req, res) => {
             head: req.body.head,
             subhead: req.body.subhead,
             paragraph: req.body.paragraph,
-            title: req.body.title,
-            url: req.body.url
+            
         })
         await meanMod.save()
 
