@@ -11,6 +11,7 @@ const studentRouter=require('./routes/studentRoute')
 const courseRouter=require('./routes/courseRoute')
 const meanRouter=require('./routes/meanRoute')
 const feedbackRouter=require('./routes/feedbackRoute')
+const fileRouter=require('./routes/file')
 
 
 
@@ -38,6 +39,8 @@ app.use('/course',courseRouter)
 app.use('/mean',meanRouter)
 app.use('/feedback',feedbackRouter)
 
+  
+app.use('/file',fileRouter)
 
 app.post('/mail',(req,res)=>{
     console.log('request came');

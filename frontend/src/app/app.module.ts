@@ -48,6 +48,10 @@ import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 import { ThomeComponent } from './trnprofile/thome/thome.component';
 import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
 import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
+import { AssignmentComponent } from './trnprofile/tcourse/assignment/assignment.component';
+import { FileUploadModule } from 'ng2-file-upload';
+import { FileService } from './service/file.service';
+
 
 
 
@@ -84,9 +88,10 @@ import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
     AprofileComponent,
     ThomeComponent,
     TcontentComponent,
-    TfeedbackComponent
-
+    TfeedbackComponent,
+    AssignmentComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -102,9 +107,11 @@ import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
     MatSelectModule,
     FormsModule,
     ToastrModule.forRoot(),
-    NgbModule
+    NgbModule,
+    FileUploadModule
   ],
-  providers: [AuthService,CourseService],
+  
+  providers: [AuthService,CourseService,FileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

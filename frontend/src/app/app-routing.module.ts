@@ -29,6 +29,7 @@ import { TprofileComponent } from './trnprofile/tprofile/tprofile.component';
 import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
 import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
+import { AssignmentComponent } from './trnprofile/tcourse/assignment/assignment.component';
 
 
 
@@ -63,6 +64,7 @@ children:[
 {path:'trnprofile',canActivate:[AuthGuard],component:TrnprofileComponent,
 children:[
   {path:'tcourse',component:TcourseComponent},
+  {path:'tassignments',component:AssignmentComponent},
   {path:'tstudent',component:TstudentComponent},
   {path:'tprofile',component:TprofileComponent},
   {path:'tcontent',component:TcontentComponent},
