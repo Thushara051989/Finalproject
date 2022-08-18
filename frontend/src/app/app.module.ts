@@ -48,7 +48,13 @@ import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 import { ThomeComponent } from './trnprofile/thome/thome.component';
 import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
 import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
+<<<<<<< HEAD
 import {FileUploadModule} from 'ng2-file-upload';
+=======
+import { ExamComponent } from './profile/sexams/exam/exam.component';
+import { ExamsDirective } from './profile/sexams/exam/exams.directive';
+
+>>>>>>> master
 
 
 @NgModule({
@@ -84,7 +90,9 @@ import {FileUploadModule} from 'ng2-file-upload';
     AprofileComponent,
     ThomeComponent,
     TcontentComponent,
-    TfeedbackComponent
+    TfeedbackComponent,
+    ExamComponent,
+    ExamsDirective
 
   ],
   imports: [
