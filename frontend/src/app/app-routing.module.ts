@@ -30,6 +30,8 @@ import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
 import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
 import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
 import { AssignmentComponent } from './trnprofile/tcourse/assignment/assignment.component';
+import { ExamComponent } from './profile/sexams/exam/exam.component';
+
 
 
 
@@ -73,7 +75,8 @@ children:[
 {path:'addCourse',component:AddCourseComponent},
 {path:'edit/:id',component:AddCourseComponent},
 {path:'addstudent',component:AddstudentComponent},
-{path:'addtrainer',component:AddtrainerComponent}
+{path:'addtrainer',component:AddtrainerComponent},
+{path:'exam',component:ExamComponent}
 
 ];
 
