@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FileSelectDirective  ,FileUploader} from 'ng2-file-upload';
 import { FileService } from 'src/app/service/file.service';
-import {saveAs} from 'file-saver';
+
 
 const uri = 'http://localhost:3000/file/upload';
 @Component({
@@ -28,7 +28,8 @@ download(index: string | number){
 
   this._fileService.downloadFile(filename)
   .subscribe(
-      data => saveAs(data, filename),
+      data => console.log()
+      ,
       error => console.error(error)
   );
 }
