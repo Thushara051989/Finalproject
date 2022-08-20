@@ -11,12 +11,15 @@ import { Router } from '@angular/router';
 export class AdmstdsecComponent implements OnInit {
 
   studentArray:any=[]
+  totalRecords:any
+  page:number=1
   constructor(private studentservice:StudentService,private router:Router) { }
 
   ngOnInit() {
     this.studentservice.displayStudents().subscribe((res)=>{
       console.log(res);
       this.studentArray=res.item
+      this.totalRecords=this.studentArray.item.length
       
     })
 

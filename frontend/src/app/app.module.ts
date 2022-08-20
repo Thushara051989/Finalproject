@@ -56,7 +56,7 @@ import { FileService } from './service/file.service';
 import { ExamComponent } from './profile/sexams/exam/exam.component';
 import { ExamsDirective } from './profile/sexams/exam/exams.directive';
 
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -114,7 +114,8 @@ import { ExamsDirective } from './profile/sexams/exam/exams.directive';
     FormsModule,
     ToastrModule.forRoot(),
     NgbModule,
-    FileUploadModule
+    FileUploadModule,
+    NgxPaginationModule
 
   ],
   

@@ -11,7 +11,10 @@
           <th>Email</th>
           <th>Action</th>
         </tr>
-        <tr *ngFor="let data of trainerArray">
+        <tr *ngFor="let data of trainerArray| paginate:{id:'listing_pagination',
+        itemsPerPage:7,
+        currentPage:page,
+        totalItems:totalRecords}">
           <td>{{data.firstname}}</td>
           <td>{{data.course}}</td>
           <td>{{data.email}}</td>
@@ -21,5 +24,8 @@
     </div><br>
     <div  style="text-align:center;">
       <button  class="btn btn-primary" routerLink="/addtrainer">Add Trainer</button>
+    </div><br>
+    <div style="text-align:center;position:relative;">
+      <pagination-controls id="listing_pagination" [maxSize]="5" [directionLinks]="true" (pageChange)="page=$event"></pagination-controls>
     </div>
-  <!-- </div> -->
+  

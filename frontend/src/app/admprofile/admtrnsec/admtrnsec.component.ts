@@ -9,12 +9,15 @@ import { Router } from '@angular/router';
 })
 export class AdmtrnsecComponent implements OnInit {
   trainerArray: any = []
+  totalRecords:any
+  page:number=1
   constructor(private trainerservice: TrainerService, private router: Router) { }
 
   ngOnInit() {
     this.trainerservice.displayTrainers().subscribe((res) => {
       console.log(res);
       this.trainerArray = res.item
+      this.totalRecords=this.trainerArray.item.length
 
     })
   }

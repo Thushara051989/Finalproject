@@ -2,8 +2,11 @@
     <button class="btn btn-primary"routerLink="/addCourse">Add Course</button><br><br>
     <div>
         <div class="main">
-            <ul class="cards" *ngFor="let data of courseArray">
-              <li class="cards_item">
+            <ul class="cards" *ngFor="let data of courseArray| paginate:{id:'listing_pagination',
+            itemsPerPage:1,
+            currentPage:page,
+            totalItems:totalRecords}">
+              <li class="cards_item" style="list-style-type:none ;">
                 <div class="card">
                   <img class="card_image" [src]="data.image">
                   <div class="card_content">
@@ -17,4 +20,7 @@
               </li>
             </ul>
           </div>
+          </div>
+          <div style="text-align:center;position:relative;">
+            <pagination-controls id="listing_pagination" [maxSize]="5" [directionLinks]="true" (pageChange)="page=$event"></pagination-controls>
           </div>
