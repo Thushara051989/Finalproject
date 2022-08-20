@@ -9,12 +9,15 @@ import { Router } from '@angular/router';
 })
 export class AdmcrssecComponent implements OnInit {
   courseArray:any=[]
+  totalRecords:any
+  page:number=1
   constructor(private courseService:CourseService,private router:Router) { }
 
   ngOnInit() {
     this.courseService.displayCourse().subscribe((res)=>{
       console.log(res);
       this.courseArray=res.item
+      this.totalRecords=this.courseArray.item.length
       
     })
   }
