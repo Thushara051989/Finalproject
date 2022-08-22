@@ -12,7 +12,6 @@ export class VideoService {
 
   addvideo(video:VideoService){
     let headers=new HttpHeaders({'Content-Type':'application/json'});
-    // let options=new HttpRequest({headers:headers});
     return this.http.post(this.posturl,JSON.stringify(video))
     .pipe(map((response:any) => response.json()));
   }

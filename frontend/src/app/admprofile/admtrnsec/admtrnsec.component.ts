@@ -18,32 +18,21 @@ export class AdmtrnsecComponent implements OnInit {
       console.log(res);
       this.trainerArray = res.item
       this.totalRecords=this.trainerArray.item.length
-
     })
   }
-
-
 
   removeTrainer(id:any){
     if(confirm('are you sure want to delete?')){
     this.trainerservice.deleteTrainer(id).subscribe((res:any)=>{
       if(res.success===1){
-
         this.ngOnInit()
-
       }
-
     })
+  }   
   }
-
-
-      
-  }
-
 
   logout() {
     localStorage.clear()
     this.router.navigate(['/'])
   }
-
 }

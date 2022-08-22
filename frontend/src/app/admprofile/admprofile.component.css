@@ -1,13 +1,12 @@
-
-.main{
-    display:flex;
+.main {
+    display: flex;
     flex-direction: row;
     width: 100%;
     align-content: center;
     border: 3em rgb(194, 222, 240) solid;
 }
 
-.left{
+.left {
     background-color: rgb(19, 180, 195);
     width: 25%;
     height: max-content;
@@ -15,9 +14,10 @@
     text-decoration: none;
     display: flex;
 }
-.right{
+
+.right {
     width: 100%;
-    height: 100%; 
+    height: 100%;
     padding: 10px;
     margin: 10px;
     align-content: top;
@@ -29,7 +29,8 @@
     color: #130606;
     display: block;
     font-weight: bold;
-  }
-  .sidebar a:hover {
+}
+
+.sidebar a:hover {
     color: white
-  }
+}

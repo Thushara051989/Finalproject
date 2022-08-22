@@ -1,52 +1,29 @@
-<!-- Load an icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
 <div class="left1">
-       <a class = "navbar-brand" href="index.html"><img src="assets/images/gurukul_yellow1.png" width="100px" height="100px" style="padding-top:10px" style="padding-bottom:10px"></a>
+  <a class="navbar-brand" href="index.html"><img src="assets/images/gurukul_yellow1.png" width="100px" height="100px"
+      style="padding-top:10px" style="padding-bottom:10px"></a>
 </div>
 <div class="right1">
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-        <img src="https://th.bing.com/th/id/R.9d49d8c751a354475fee49bbd877fecf?rik=Gm2wixzvs5YQIQ&pid=ImgRaw&r=0" alt="img" width="30" height="30" class="rounded-circle">
-        
-          <!-- <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> -->
-        </div>
-      </nav>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <img src="https://th.bing.com/th/id/R.9d49d8c751a354475fee49bbd877fecf?rik=Gm2wixzvs5YQIQ&pid=ImgRaw&r=0"
+        alt="img" width="30" height="30" class="rounded-circle">
+    </div>
+  </nav>
 </div>
 <h3>Hello {{data.firstname}},</h3>
-
-
-    
-<!-- The sidebar -->
-
-
-<div class = "main">
-
- <div class="left">
+<div class="main">
+  <div class="left">
     <div class="sidebar">
-        <a routerLink="sdashboard"><i class="fa fa-fw fa-home"></i> Dashboard</a>
-        <a routerLink="sprofile"><i class="fa fa-fw fa-user"></i> Profile</a>
-        <!-- <a routerLink="sgrade"><i class="fa fa-fw fa-graduation-cap"></i> Grade</a> -->
-        <a routerLink="sassignments"><i class="fa fa-fw fa-check"></i> Assignments</a>
-        <a routerLink="sexams"><i class="fa fa-fw fa-pencil"></i> Exams</a>
-        <!-- <a routerLink="smessages"><i class="fa fa-fw fa-envelope"></i> Messages</a> -->
-        <a routerLink="sfeedbacks"><i class="fa fa-fw fa-commenting" ></i>  Feedbacks</a>
-        <!-- <a routerLink="ssettings"><i class="fa fa-fw fa-wrench"></i> Settings</a> -->
-        <a href="#" (click)="logout()"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+      <a routerLink="sdashboard"><i class="fa fa-fw fa-home"></i> Dashboard</a>
+      <a routerLink="sprofile"><i class="fa fa-fw fa-user"></i> Profile</a>
+      <a routerLink="sassignments"><i class="fa fa-fw fa-check"></i> Assignments</a>
+      <a routerLink="sexams"><i class="fa fa-fw fa-pencil"></i> Exams</a>
+      <a routerLink="sfeedbacks"><i class="fa fa-fw fa-commenting"></i> Feedbacks</a>
+      <a href="#" (click)="logout()"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
     </div>
- </div>
- <div class="right">
-  <router-outlet></router-outlet>
+  </div>
+  <div class="right">
+    <router-outlet></router-outlet>
+  </div>
 </div>
-</div>
-
-
- 
- 
-
-
-

@@ -15,11 +15,12 @@ export class SfeedbacksComponent implements OnInit {
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
     feed: new FormControl('', [Validators.required])
-  });
+  })
   
   get f(){
     return this.form.controls;
   }
+  
   submit(){
     console.log(this.form.value);
     this.feedservice.sendFeed(this.form.value);

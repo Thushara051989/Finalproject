@@ -3,57 +3,57 @@
     <a routerLink="">Home</a>
     <a routerLink="/login">Login</a>
     <a routerLink="/signup">SignUp</a>
-    <!-- <a routerLink="/courses">Courses</a> -->
-    <!-- <a routerLink="/contactus">Contact Us</a> -->
   </nav>
 </header>
 <div class="divhome">
   <img src="assets/images/gurukul_yellow1.png" alt="logo">
 </div>
 <div class="main">
-  <div class="row"> 
-  <ul class="col-4" *ngFor="let data of courseArray">
-    <li class="cards_item">
-      <div class="card">
-        <img class="card_image" [src]="data.image">
-        <div class="card_content">
-          <h2 class="card_title">{{data.name}}</h2>
-          <h3 class="card_title">{{data.duration}}</h3>
-          <p class="card_text">{{data.description}}</p>
-          <button class="btn btn-outline-danger" (click)="apply()">Apply</button>
+  <div class="row">
+    <ul class="col-4" *ngFor="let data of courseArray">
+      <li class="cards_item">
+        <div class="card">
+          <img class="card_image" [src]="data.image">
+          <div class="card_content">
+            <h2 class="card_title">{{data.name}}</h2>
+            <h3 class="card_title">{{data.duration}}</h3>
+            <p class="card_text">{{data.description}}</p>
+            <button class="btn btn-outline-danger" (click)="apply()">Apply</button>
+          </div>
         </div>
-      </div>
-    </li>
-  </ul>
-</div>
+      </li>
+    </ul>
+  </div>
 </div>
 <section class="tstmonial">
-      <h2 style="text-align: center;">Testimonials</h2>
+  <h2 style="text-align: center;">Testimonials</h2>
   <div class="row text-center">
     <div class="col-md-6 mb-0">
       <div class="d-flex justify-content-center mb-4">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp"
-          class="rounded-circle shadow-1-strong" width="100" height="100" />
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp" class="rounded-circle shadow-1-strong"
+          width="100" height="100" />
       </div>
       <p class="lead my-3 text-muted">
-        "Highly satisfied with the training.. Hands on sessions are interactive..Faculties of FSD course are excellent and very friendly.HR team is highly supportive with regard to placements."
+        "Highly satisfied with the training.. Hands on sessions are interactive..Faculties of FSD course are excellent
+        and very friendly.HR team is highly supportive with regard to placements."
       </p>
       <p class="font-italic font-weight-normal mb-0">-Tushara </p>
     </div>
     <div class="col-md-6 mb-0">
       <div class="d-flex justify-content-center mb-4">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp"
-          class="rounded-circle shadow-1-strong" width="100" height="100" />
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp" class="rounded-circle shadow-1-strong"
+          width="100" height="100" />
       </div>
       <p class="lead my-3 text-muted">
-        "ICT academy is the best training institute for FSD course with best faculty and a wonderful environment very suitable to become a full stack developer."
+        "ICT academy is the best training institute for FSD course with best faculty and a wonderful environment very
+        suitable to become a full stack developer."
       </p>
       <p class="font-italic font-weight-normal mb-0">-Fathima Basheer</p>
     </div>
     <div class="col-md-6 mb-0">
       <div class="d-flex justify-content-center mb-4">
-        <img src="https://i.redd.it/ht7ai0b87q441.jpg"
-          class="rounded-circle shadow-1-strong" width="100" height="100" />
+        <img src="https://i.redd.it/ht7ai0b87q441.jpg" class="rounded-circle shadow-1-strong" width="100"
+          height="100" />
       </div>
       <p class="lead my-3 text-muted">
         "Best academy for those pursuing Data Science.Excellent training and friendly staffs."
@@ -66,7 +66,8 @@
           class="rounded-circle shadow-1-strong" width="100" height="100" />
       </div>
       <p class="lead my-3 text-muted">
-        "ICT Academy Of Kerala is proving best advanced training in new technologies like RPA and their trainers are best in industry."
+        "ICT Academy Of Kerala is proving best advanced training in new technologies like RPA and their trainers are
+        best in industry."
       </p>
       <p class="font-italic font-weight-normal mb-0">-Jishnu P </p>
     </div>

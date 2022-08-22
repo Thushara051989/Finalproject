@@ -8,9 +8,11 @@ import { FeedbackService } from 'src/app/service/feedback.service';
   styleUrls: ['./tfeedback.component.css']
 })
 export class TfeedbackComponent implements OnInit {
+
   data:any=[]
   totalRecords:any
   page:number=1
+  
   constructor(private router:Router, private feedservice:FeedbackService) { }
 
   ngOnInit(): void {
@@ -18,8 +20,6 @@ export class TfeedbackComponent implements OnInit {
       console.log(res);
       this.data=res.item;
       this.totalRecords=this.data.item.length
-
-      
     })
   }
 

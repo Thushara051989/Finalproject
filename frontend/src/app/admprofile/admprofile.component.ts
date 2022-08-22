@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../service/auth.service';
@@ -10,26 +9,22 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./admprofile.component.css']
 })
 export class AdmprofileComponent implements OnInit {
-  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router, private toast: ToastrService) { }
 
-  data=<any>''
-  
+  constructor(private auth: AuthService,private router: Router, private toast: ToastrService) { }
+
+  data = <any>''
+
   ngOnInit() {
-    this.auth.getadmProfile().subscribe(res=>{
-      console.log({res});
-      if(res.success){
-        this.data=res.data
+    this.auth.getadmProfile().subscribe(res => {
+      console.log({ res });
+      if (res.success) {
+        this.data = res.data
       }
-      
     })
+  }
+
+  logout() {
+    localStorage.clear()
+    this.router.navigate(['/'])
 }
-
-
-
-
-logout(){
-  localStorage.clear()
-  this.router.navigate(['/'])
-}
-
 }

@@ -1,60 +1,54 @@
-.center{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 5rem;
+.center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 5rem;
 }
 
-.login-card{
-    background-color: rgb(228, 231, 237);
-    border: 1px solid;
-    border-radius: 0.4rem;
-    width:500px;
-    height: 300px;
-    
-    
-}
-#lb{
-    font-weight: bolder;
-    font-size: larger;
+.login-card {
+  background-color: rgb(228, 231, 237);
+  border: 1px solid;
+  border-radius: 0.4rem;
+  width: 500px;
+  height: 300px;
 }
 
-mat-form-field{
-width: 100%;
+#lb {
+  font-weight: bolder;
+  font-size: larger;
+}
+
+mat-form-field {
+  width: 100%;
 }
 
 .bg-image {
-    /* The image used */
-    background-image:URL('/assets/images/losi.jpg');
-  
-  
-    /* Full height */
-    height: 50rem;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  background-image: URL('/assets/images/losi.jpg');
+  height: 50rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  nav {
-    overflow: hidden;
-  }
-  
-  nav a {
-    float: left;
-    display: block;
-    color: rgb(34, 34, 136);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size  :17px;
-    font-family: helvetica;
-    letter-spacing: 2px;
-  }
-  nav li,
+nav {
+  overflow: hidden;
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: rgb(34, 34, 136);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: helvetica;
+  letter-spacing: 2px;
+}
+
+nav li,
 nav ul {
   list-style: none;
 }
@@ -62,4 +56,4 @@ nav ul {
 nav a:hover {
   background-color: #ddd;
   color: black;
-} 
+}
