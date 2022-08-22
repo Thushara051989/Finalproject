@@ -6,13 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class TrainerService {
 
-  constructor(private http:HttpClient) { }
-  displayTrainers(){
+  constructor(private http: HttpClient) { }
+
+  displayTrainers() {
     return this.http.get<any>('http://localhost:3000/trainer')
   }
 
-  deleteTrainer(id:any){
+  deleteTrainer(id: any) {
     return this.http.delete(`http://localhost:3000/trainer/${id}`)
   }
-  
 }

@@ -6,29 +6,29 @@ import { Injectable } from '@angular/core';
 })
 export class CourseService {
 
- 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  displayCourse(){
-
+  displayCourse() {
     return this.http.get<any>('http://localhost:3000/course')
   }
 
-  createCourse(data:any){
-    return this.http.post<any>('http://localhost:3000/course/add',{data})
+  createCourse(data: any) {
+    return this.http.post<any>('http://localhost:3000/course/add', { data })
   }
 
-  displayCourseById(id:any){
-
+  displayCourseById(id: any) {
     return this.http.get<any>(`http://localhost:3000/course/${id}`)
-
   }
 
-  updateCourse(id:any,data:any){
-    return this.http.put<any>(`http://localhost:3000/course/${id}`,data)
+  updateCourse(id: any, data: any) {
+    return this.http.put<any>(`http://localhost:3000/course/${id}`, data)
   }
 
-  deleteCourse(id:any){
+  deleteCourse(id: any) {
     return this.http.delete(`http://localhost:3000/course/${id}`)
+  }
+
+  getMean() {
+    return this.http.get<any>('http://localhost:3000/mean')
   }
 }

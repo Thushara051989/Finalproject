@@ -1,27 +1,27 @@
-<div class="admin">
-<div class="divhome">
-  
-  <button id="bt1" class="btn btn-outline-danger" (click)="logout()">Logout</button>
-  <button id="bt2" class="btn btn-outline-danger" routerLink="/admprofile">Back</button>
-    <h1>HELLO ADMIN !!!</h1>
-  <img src="assets/images/admin1.jpg" alt="logo"> 
-    </div>
-    <button class="btn btn-primary"routerLink="/addCourse">Add Course</button>
-    <div>
-        <div class="main">
-            <ul class="cards" *ngFor="let data of courseArray">
-              <li class="cards_item">
-                <div class="card">
-                  <img class="card_image" [src]="data.image">
-                  <div class="card_content">
-                    <h2 class="card_title1">{{data.name}}</h2>
-                    <h3 class="card_title">{{data.duration}}</h3>
-                    <p class="card_text">{{data.description}}</p>
-                    <button class="btn btn-outline-danger"(click)="navigateToEdit(data._id)">update</button>
-                    <button class="btn btn-outline-danger" (click)="navigateToDelete(data._id)">delete</button>
-                  </div>
-                </div>
-              </li>
-            </ul>
+<h2>COURSES</h2>
+<button class="btn btn-primary" routerLink="/addCourse">Add Course</button><br><br>
+<div>
+  <div class="main">
+    <ul class="cards" *ngFor="let data of courseArray| paginate:{id:'listing_pagination',
+            itemsPerPage:1,
+            currentPage:page,
+            totalItems:totalRecords}">
+      <li class="cards_item" style="list-style-type:none ;">
+        <div class="card">
+          <img class="card_image" [src]="data.image">
+          <div class="card_content">
+            <h2 class="card_title1">{{data.name}}</h2>
+            <h3 class="card_title">{{data.duration}}</h3>
+            <p class="card_text">{{data.description}}</p>
+            <button class="btn btn-outline-danger" (click)="navigateToEdit(data._id)">update</button>
+            <button class="btn btn-outline-danger" (click)="navigateToDelete(data._id)">delete</button>
           </div>
-          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div style="text-align:center;position:relative;">
+  <pagination-controls id="listing_pagination" [maxSize]="5" [directionLinks]="true" (pageChange)="page=$event">
+  </pagination-controls>
+</div>

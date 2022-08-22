@@ -6,12 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class StudentService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  displayStudents(){
+  displayStudents() {
     return this.http.get<any>('http://localhost:3000/student')
   }
-  deleteStudent(id:any){
+
+  deleteStudent(id: any) {
     return this.http.delete(`http://localhost:3000/student/${id}`)
   }
 }

@@ -3,66 +3,33 @@ const router = express.Router()
 const courseModel = require('../src/model/courseModel')
 const mongoose = require('mongoose')
 
-// const jwt = require('jsonwebtoken')
-
-// function verifyToken(req,res,next){
-
-//     if(!req.headers.authorization){
-//         return res.status(401).send('Unauthorized  Request')
-//     }
-//     let token=req.headers.authorization.split(' ')[1]
-
-//     if(token=='null'){
-//         return res.status(401).send('unauthorized 2 request')
-//     }
-
-//     let payload=jwt.verify(token,'secretKey')
-//     console.log(payload)
-
-//     if(!payload){
-//         return res.status(401).send('Unauthorized request')
-//     }
-
-//     req.Bcode=payload.subject
-//     next()
-// }
-
 router.post('/add', async (req, res) => {
-
     console.log('body', req.body);
     try {
         res.header("Access-Control-Allow-Origin", "*")
         res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
-
         const courseMod = new courseModel({
-
             name: req.body.data.name,
             duration: req.body.data.duration,
             image: req.body.data.name,
             description: req.body.data.description
         })
         await courseMod.save()
-
         res.json({
-
             success: 1,
             message: 'Course successfuly saved'
 
         })
-
     }
     catch (err) {
         res.json({
             success: 0,
             message: 'error occuured while saving' + err
         })
-
     }
 })
 
-
 router.get('/', async (req, res) => {
-
     try {
         res.header("Access-Control-Allow-Origin", "*")
         res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
@@ -83,19 +50,15 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     let id = req.params.id
-
     let ValidId = mongoose.Types.ObjectId.isValid(id)
     if (ValidId) {
         try {
-
             let singleCourse = await courseModel.findById({ _id: id })
             res.json({
                 success: 1,
                 message: 'single Course listed',
                 item: singleCourse
             })
-
-
         }
         catch (err) {
             res.json({
@@ -103,17 +66,14 @@ router.get('/:id', async (req, res) => {
                 message: 'error occured while listing single Book' + err
             })
         }
-
     }
     else {
         res.json({
             success: 0,
             message: 'invalid id'
         })
-
     }
 })
-
 
 router.put('/:id', async (req, res) => {
     let id = req.params.id
@@ -123,7 +83,6 @@ router.put('/:id', async (req, res) => {
             await courseModel.findByIdAndUpdate({ _id: id }, {
                 $set:
                 {
-                    
                     name: req.body.name,
                     duration: req.body.duration,
                     image: req.body.image,
@@ -144,10 +103,8 @@ router.put('/:id', async (req, res) => {
     }
 })
 
-
 router.delete('/:id', async (req, res) => {
     let id = req.params.id
-
     let validId = mongoose.Types.ObjectId.isValid(id)
     if (validId) {
         try {
@@ -158,15 +115,12 @@ router.delete('/:id', async (req, res) => {
             })
         }
         catch (err) {
-
             res.json({
                 success: 0,
                 message: 'error occured while deleting' + err
             })
-
         }
     }
 })
-
 
 module.exports = router

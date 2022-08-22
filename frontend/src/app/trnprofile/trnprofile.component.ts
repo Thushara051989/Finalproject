@@ -8,7 +8,9 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./trnprofile.component.css']
 })
 export class TrnprofileComponent implements OnInit {
+
   data=<any>''
+  
   constructor(private auth: AuthService,private router:Router) { }
 
   ngOnInit() {
@@ -17,7 +19,6 @@ export class TrnprofileComponent implements OnInit {
       if(res.success){
         this.data=res.data
       }
-      
     })
 }
 

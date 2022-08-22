@@ -1,0 +1,22 @@
+<div>
+  <h2>Feedbacks</h2>
+</div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Feeds</th>
+  </tr>
+  <tr *ngFor="let data of data| paginate:{id:'listing_pagination',
+    itemsPerPage:6,
+    currentPage:page,
+    totalItems:totalRecords}">
+    <td>{{data.name}}</td>
+    <td>{{data.email}}</td>
+    <td>{{data.feed}}</td>
+  </tr>
+</table><br>
+<div style="text-align:center;position:relative;">
+  <pagination-controls id="listing_pagination" [maxSize]="5" [directionLinks]="true" (pageChange)="page=$event">
+  </pagination-controls>
+</div>

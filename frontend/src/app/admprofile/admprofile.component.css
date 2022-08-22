@@ -1,177 +1,36 @@
-.divhome{
-    background-image: url("https://img.wallpapersafari.com/desktop/800/450/30/59/Bo4pPW.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    text-align: center;
-    max-width: 100%;
-    /* height: max-content; */
-    height: 400px;
-    overflow: hidden;
-  }
-  h1{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 50px;
-    margin-top: 100px;
-    color: white;
-  }
-  img {
-    height: 150px;
-    width:130px;
-    vertical-align: middle;
-    margin-top: 30px;
-  }
-  .im{
-    margin-left: -2px;
-  }
-
-  
-.center{
-    position: relative;
+.main {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 5rem;
+    flex-direction: row;
+    width: 100%;
+    align-content: center;
+    border: 3em rgb(194, 222, 240) solid;
 }
 
-.login-card{
-    background-color: rgb(228, 231, 237);
-    border: 1px solid;
-    border-radius: 0.4rem;
-    width:350px
+.left {
+    background-color: rgb(19, 180, 195);
+    width: 25%;
+    height: max-content;
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
 }
 
-mat-form-field{
-width: 100%;
+.right {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 10px;
+    align-content: top;
 }
 
-.bg-image {
-    /* The image used */
-    background-image:URL('/assets/images/signup2.jpg');
-  
-  
-    /* Full height */
-    height: 50rem;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .glow {
-    font-size: 30px;
-    color: #fff;
-    margin-top: 50%;
-    text-align: center;
-    margin-left: 40%;
-   
-    animation: glow 1s ease-in-out infinite alternate;
-  }
-  .glow:hover {
-    font-size: 40px;
-    color: aqua;
-  }
-  .admin {
-    background-color: black;
-    font-family: 'Times New Roman', Times, serif;
-  }
-  
-  /* @keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-    }
-    
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-    }
-  } */
-  #bt1{
-    margin-right: -1250px;
-    margin-top: 10px;
-    font-size: larger;
-  }
-
-  .card{
-    background: linear-gradient(to bottom left, #5c76a0 40%, #1720cd 100%);
-    
-  }
-  img {
-    height: 100px;
-    max-width: 100%;
-    vertical-align: middle;
-    text-align: center;
-    margin-left: 100px;
-  }
-  a{
-    margin-left: 110px;
-    color: black;
-    font-size: larger;
-    font-weight: bolder;
-  }
-  .card:hover{
-  
-    transform :translate3d(2px,-5px,0);
-    z-index:3;
-    border-color: #007bff !important;
-    box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07), 1px 6px 12 px rgba(39, 44, 49, 0.04);
-    transition:all 0.6s ease;
-  }
-
-  
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.sidebar a {
+    padding: 25px 5px 5px 5px;
+    font-size: 20px;
+    color: #130606;
+    display: block;
+    font-weight: bold;
 }
 
-.cards_item {
-  display: flex;
-  padding: 1rem;
-}
-
-@media (min-width: 40rem) {
-  .cards_item {
-    width: 50%;
-  }
-}
-
-@media (min-width: 56rem) {
-  .cards_item {
-    width: 33.3333%;
-  }
-}
-
-.card {
-  background-color: white;
-  border-radius: 0.25rem;
-  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.card_content {
-  padding: 1rem;
-  background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
-}
-
-.card_title {
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: 0px;
-}
-
-.card_text {
-  color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;    
-  font-weight: 400;
+.sidebar a:hover {
+    color: white
 }

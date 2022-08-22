@@ -8,14 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./admcrssec.component.css']
 })
 export class AdmcrssecComponent implements OnInit {
+  
   courseArray:any=[]
+  totalRecords:any
+  page:number=1
+
   constructor(private courseService:CourseService,private router:Router) { }
 
   ngOnInit() {
     this.courseService.displayCourse().subscribe((res)=>{
       console.log(res);
       this.courseArray=res.item
-      
+      this.totalRecords=this.courseArray.item.length
     })
   }
 
@@ -23,7 +27,7 @@ export class AdmcrssecComponent implements OnInit {
     this.router.navigate([`/edit/${id}`])
     }
 
-    navigateToDelete(id:any){
+   navigateToDelete(id:any){
       if(confirm('are you sure want to delete?')){
         this.courseService.deleteCourse(id).subscribe((res:any)=>{
           if(res.success===1){
@@ -32,11 +36,7 @@ export class AdmcrssecComponent implements OnInit {
       
           }
         })
-    
       }
-    
-      
-    
     }
 
   logout(){

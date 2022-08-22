@@ -2,32 +2,24 @@
   <a routerLink="">Home</a>
   <a routerLink="/login">Login</a>
   <a routerLink="/signup">SignUp</a>
-  <a routerLink="/courses">Courses</a>
-  <a routerLink="/contactus">Contact Us</a>
 </nav>
 <div class="bg-image">
   <div class="center">
     <mat-tab-group style="border:1px solid;background: rgb(235, 247, 241);border-radius: 0.7rem;">
       <mat-tab id="lb" label="Student">
         <mat-card class="login-card">
-          <form [formGroup]="signInform" (ngSubmit)="stdLogin()">
-            <br>
-            <br>
-
+          <form [formGroup]="signInform" (ngSubmit)="stdLogin()"><br><br>
             <mat-form-field appearance="outline">
-
               <mat-label>Email</mat-label>
               <input matInput placeholder="Email" formControlName="email" type="email">
               <mat-error *ngIf="signInControls?.email?.errors?.required&&signSubmit">Email required
               </mat-error>
               <mat-error *ngIf="signInControls?.email?.errors?.['pattern']&&signSubmit">Email invalid
               </mat-error>
-
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
               <input matInput placeholder="Password" formControlName="password" type="password">
-
               <mat-error *ngIf="signInControls?.password?.errors?.required&&signSubmit">password required
               </mat-error>
               <mat-error *ngIf="signInControls?.password?.errors?.['minLength']&&signSubmit">min length required
@@ -43,24 +35,18 @@
       </mat-tab>
       <mat-tab id="lb" label="Trainer">
         <mat-card class="login-card">
-          <form [formGroup]="signInform" (ngSubmit)="trainerLogin()">
-            <br>
-            <br>
-
+          <form [formGroup]="signInform" (ngSubmit)="trainerLogin()"><br><br>
             <mat-form-field appearance="outline">
-
               <mat-label>Email</mat-label>
               <input matInput placeholder="Email" formControlName="email" type="email">
               <mat-error *ngIf="signInControls?.email?.errors?.required&&signSubmit">Email required
               </mat-error>
               <mat-error *ngIf="signInControls?.email?.errors?.['pattern']&&signSubmit">Email invalid
               </mat-error>
-
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
               <input matInput placeholder="Password" formControlName="password" type="password">
-
               <mat-error *ngIf="signInControls?.password?.errors?.required&&signSubmit">password required
               </mat-error>
               <mat-error *ngIf="signInControls?.password?.errors?.['minLength']&&signSubmit">min length required
@@ -75,24 +61,18 @@
       </mat-tab>
       <mat-tab id="lb" label="Admin">
         <mat-card class="login-card">
-          <form [formGroup]="signInform" (ngSubmit)="adminlogin()">
-            <br>
-            <br>
-
+          <form [formGroup]="signInform" (ngSubmit)="adminlogin()"> <br><br>
             <mat-form-field appearance="outline">
-
               <mat-label>Email</mat-label>
               <input matInput placeholder="Email" formControlName="email" type="email">
               <mat-error *ngIf="signInControls?.email?.errors?.required&&signSubmit">Email required
               </mat-error>
               <mat-error *ngIf="signInControls?.email?.errors?.['pattern']&&signSubmit">Email invalid
               </mat-error>
-
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
               <input matInput placeholder="Password" formControlName="password" type="password">
-
               <mat-error *ngIf="signInControls?.password?.errors?.required&&signSubmit">password required
               </mat-error>
               <mat-error *ngIf="signInControls?.password?.errors?.['minLength']&&signSubmit">min length required
@@ -107,4 +87,4 @@
       </mat-tab>
     </mat-tab-group>
   </div>
-  </div>
+</div>

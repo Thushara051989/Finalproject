@@ -1,96 +1,99 @@
-.divhome{
-    background-image: url("https://img.wallpapersafari.com/desktop/800/450/30/59/Bo4pPW.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    text-align: center;
-    max-width: 100%;
-    /* height: max-content; */
-    height: 400px;
-    overflow: hidden;
-  }
-  #bt1{
-    margin-right: -1250px;
-    margin-top: 5px;
-  }
-  h1{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 50px;
-    margin-top: 100px;
-    color: white;
-  }
-  img {
-    height: 150px;
-    width:130px;
-    vertical-align: middle;
-    margin-top: 30px;
-  }
-  h2{
-    text-shadow: #ddd;
-    text-decoration: underline;
-    font-weight: bolder;
-    margin-left: 10px;
-  }
-.center{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 5rem;
+.divhome {
+  background-image: url("https://img.wallpapersafari.com/desktop/800/450/30/59/Bo4pPW.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  text-align: center;
+  max-width: 100%;
+  height: 400px;
+  overflow: hidden;
 }
 
-.login-card{
-    background-color: rgb(228, 231, 237);
-    border: 1px solid;
-    border-radius: 0.4rem;
-    width:350px
+#bt1 {
+  margin-right: -1250px;
+  margin-top: 5px;
 }
 
-mat-form-field{
-width: 100%;
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 50px;
+  margin-top: 100px;
+  color: white;
+}
+
+img {
+  height: 150px;
+  width: 130px;
+  vertical-align: middle;
+  margin-top: 30px;
+}
+
+h2 {
+  text-shadow: #ddd;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+
+.center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 5rem;
+}
+
+.login-card {
+  background-color: rgb(228, 231, 237);
+  border: 1px solid;
+  border-radius: 0.4rem;
+  width: 350px
+}
+
+mat-form-field {
+  width: 100%;
 }
 
 .bg-image {
-    /* The image used */
-    background-image:URL('/assets/images/signup2.jpg');
-  
-  
-    /* Full height */
-    height: 50rem;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  background-image: URL('/assets/images/signup2.jpg');
+  height: 50rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  th, td {
-    padding: 15px;
-    text-align: left;
-  }
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even){background-color: #f2f2f2}
-  .btn {
-    background-color: #ddd;
-    color: black;
-    text-align: center;
-    transition: 0.3s;
-  }
-  
-  .btn:hover {
-    background-color: #3e8e41;
-    color: white;
-  }
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.btn {
+  background-color: #ddd;
+  color: black;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+  color: white;
+}

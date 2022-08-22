@@ -1,100 +1,101 @@
-.divhome{
-    background-image: url("https://img.wallpapersafari.com/desktop/800/450/30/59/Bo4pPW.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    text-align: center;
-    max-width: 100%;
-    /* height: max-content; */
-    height: 400px;
-    overflow: hidden;
-  }
-  h1{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 50px;
-    margin-top: 100px;
-    color: white;
-  }
-  img {
-    height: 150px;
-    width:130px;
-    vertical-align: middle;
-    margin-top: 30px;
-  }
-.center{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 5rem;
+.divhome {
+  background-image: url("https://img.wallpapersafari.com/desktop/800/450/30/59/Bo4pPW.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  text-align: center;
+  max-width: 100%;
+  height: 400px;
+  overflow: hidden;
 }
 
-.login-card{
-    background-color: rgb(228, 231, 237);
-    border: 1px solid;
-    border-radius: 0.4rem;
-    width:350px
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 50px;
+  margin-top: 100px;
+  color: white;
 }
 
-mat-form-field{
-width: 100%;
+img {
+  height: 150px;
+  width: 130px;
+  vertical-align: middle;
+  margin-top: 30px;
+}
+
+.center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 5rem;
+}
+
+.login-card {
+  background-color: rgb(228, 231, 237);
+  border: 1px solid;
+  border-radius: 0.4rem;
+  width: 350px
+}
+
+mat-form-field {
+  width: 100%;
 }
 
 .bg-image {
-    /* The image used */
-    background-image:URL('/assets/images/signup2.jpg');
-  
-  
-    /* Full height */
-    height: 50rem;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  background-image: URL('/assets/images/signup2.jpg');
+  height: 50rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  th, td {
-    padding: 15px;
-    text-align: left;
-  }
-  #bt1{
-    margin-right: -1250px;
-    margin-top: 5px;
-  }
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 80%;
-    align-content: center;
-    margin-left: 8%;
-    text-align: justify;
-  }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  .container {
-    padding: 9px 16px;
-  }
-  .card_image{
-    align-content: center;
-    margin-left: 45%;
-    
-  }
-  .admin {
-    background-color: black;
-    font-family: 'Times New Roman', Times, serif;
-  }
-  .card_title1:hover{
-    font-size: 40px;
-    color:blue;
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
 
-  }
-  .card_content {
-    padding: 1rem;
-    background: linear-gradient(to bottom left, rgb(241, 229, 231) 40%, #eebfdd 100%);
-  }
+#bt1 {
+  margin-right: -1250px;
+  margin-top: 5px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 50%;
+  align-content: center;
+  margin-left: 8%;
+  text-align: justify;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 9px 16px;
+}
+
+.card_image {
+  align-content: center;
+  margin-left: 45%;
+}
+
+.admin {
+  background-color: black;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.card_title1:hover {
+  font-size: 40px;
+  color: blue;
+}
+
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, rgb(241, 229, 231) 40%, #eebfdd 100%);
+}

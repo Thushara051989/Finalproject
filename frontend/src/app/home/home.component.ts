@@ -8,19 +8,19 @@ import { CourseService } from '../service/course.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   courseArray:any=[]
+
   constructor(private courseService:CourseService,private router:Router) { }
 
   ngOnInit() {
     this.courseService.displayCourse().subscribe((res)=>{
       console.log(res);
       this.courseArray=res.item
-      
     })
   }
 
   apply(){
     this.router.navigate(['/signup'])
   }
-
 }

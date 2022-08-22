@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/service/auth.service';
 
 
 @Component({
@@ -8,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SdashboardComponent implements OnInit {
 
-  constructor() { }
+  data = <any>''
+  
+  constructor(private auth: AuthService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.auth.getProfile().subscribe(res => {
+      console.log({ res });
+      if (res.success) {
+        this.data = res.data
+      }
+    })
   }
 
 }

@@ -1,0 +1,23 @@
+<div>
+  <h2>Student List</h2>
+</div>
+<table>
+  <tr>
+    <th>name</th>
+    <th>Course</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let data of studentArray| paginate:{id:'listing_pagination',
+    itemsPerPage:7,
+    currentPage:page,
+    totalItems:totalRecords}">
+    <td>{{data.firstname}}</td>
+    <td>{{data.course}}</td>
+    <td>{{data.email}}</td>
+    <td><button class="btn" (click)="removeStd(data._id)">remove access</button></td>
+  </tr>
+</table><br>
+<div style="text-align:center;position:relative;">
+  <pagination-controls id="listing_pagination" [maxSize]="5" [directionLinks]="true" (pageChange)="page=$event">
+  </pagination-controls>
+</div>
