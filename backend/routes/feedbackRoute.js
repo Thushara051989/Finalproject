@@ -1,9 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const feedModel = require('../src/model/feedModel')
-const mongoose = require('mongoose')
-router.get('/', async (req, res) => {
 
+router.get('/', async (req, res) => {
     try {
         res.header("Access-Control-Allow-Origin", "*")
         res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
@@ -21,35 +20,30 @@ router.get('/', async (req, res) => {
         })
     }
 })
-router.post('/add', async (req, res) => {
 
+router.post('/add', async (req, res) => {
     console.log('body', req.body);
     try {
         res.header("Access-Control-Allow-Origin", "*")
         res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
-
         const feedMod = new feedModel({
-
             name: req.body.data.name,
             email: req.body.data.email,
             feed: req.body.data.feed
         })
         await feedMod.save()
-
         res.json({
-
             success: 1,
             message: 'Feedback saved'
 
         })
-
     }
     catch (err) {
         res.json({
             success: 0,
             message: 'error occuured while saving' + err
         })
-
     }
 })
+
 module.exports=router;

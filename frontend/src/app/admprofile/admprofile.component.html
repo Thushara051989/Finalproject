@@ -1,72 +1,45 @@
-
-
-    <div class="main">
-
-      <div class="left">
-         <div class="sidebar">
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-              <div>
-                      <img src="https://th.bing.com/th/id/R.9d49d8c751a354475fee49bbd877fecf?rik=Gm2wixzvs5YQIQ&pid=ImgRaw&r=0" alt="img" width="30" height="30" class="rounded-circle">
-                      <h2>Admin Panel</h2>
-                      <!-- <p>Email:{{data.email}}</p> -->
-              </div>
-              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                  <li class="nav-item">
-                      <a routerLink="admtrnsec" class="nav-link align-middle px-0">
-                          <i class="bi bi-person-workspace"></i> <span class="ms-1 d-none d-sm-inline">Trainers</span>
-                      </a>
-                  </li>
-                  <!-- <li>
-                      <a routerLink="/assignments" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                          <i class="fs-4 bi-list-check"></i> <span class="ms-1 d-none d-sm-inline">Assignments</span> </a>
-                  </li> -->
-                  <!-- <li>
-                      <a routerLink="/exams" class="nav-link px-0 align-middle">
-                          <i class="fs-4 bi-vector-pen"></i> <span class="ms-1 d-none d-sm-inline">Exams</span></a>
-                  </li> -->
-                  <!-- <li>
-                      <a routerLink="/feedbacks" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                          <i class="fs-4 bi-envelope-fill"></i> <span class="ms-1 d-none d-sm-inline">Feedbacks</span></a>
-                  </li> -->
-                  <li>
-                      <a routerLink="admcrssec" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                          <i class="fs-4 bi-book"></i> <span class="ms-1 d-none d-sm-inline">Courses</span> </a>
-                  </li>
-                  <li>
-                      <a routerLink="admstdsec" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                          <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Students</span> </a>
-                  </li>
-                  <li>
-                    <a routerLink="aprofile" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                        <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Profile</span> </a>
-                </li>
-                  <li>
-                      <a  data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                          <i class="fs-4 bi-person-dash"></i> <span class="ms-1 d-none d-sm-inline" (click)="logout()">Logout</span> </a>
-                  </li>
-              </ul>
-              <hr>   
-          </div>
-         </div>
-      </div>
-  
-      <div class="right">
-          <nav class="navbar navbar-light bg-light">
-              <div class="container-fluid">
-                <!-- <a routerLink="/trnprofile" class="navbar-brand">Profile</a> -->
-                <!-- <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                   <button class="btn btn-outline-success" type="submit">Search</button> 
-                </form> -->
-              </div>
-            </nav>
-            <div>
+<div class="main">
+    <div class="left">
+        <div class="sidebar">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <div>
+                    <img src="https://th.bing.com/th/id/R.9d49d8c751a354475fee49bbd877fecf?rik=Gm2wixzvs5YQIQ&pid=ImgRaw&r=0"
+                        alt="img" width="30" height="30" class="rounded-circle">
+                    <h2>Admin Panel</h2>
+                </div>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a routerLink="admtrnsec" class="nav-link align-middle px-0">
+                            <i class="bi bi-person-workspace"></i> <span class="ms-1 d-none d-sm-inline">Trainers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="admcrssec" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-book"></i> <span class="ms-1 d-none d-sm-inline">Courses</span> </a>
+                    </li>
+                    <li>
+                        <a routerLink="admstdsec" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Students</span> </a>
+                    </li>
+                    <li>
+                        <a routerLink="aprofile" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Profile</span> </a>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-person-dash"></i> <span class="ms-1 d-none d-sm-inline"
+                                (click)="logout()">Logout</span> </a>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <nav class="navbar navbar-light bg-light">
+        </nav>
+        <div>
             <router-outlet></router-outlet>
         </div>
-      </div>
-  </div>
-  
-
-
-      
-
+    </div>
+</div>

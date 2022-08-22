@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./aprofile.component.css']
 })
 export class AprofileComponent implements OnInit {
+
   data=<any>''
+
   constructor(private auth: AuthService,private router:Router) { }
 
   ngOnInit(){
@@ -15,9 +17,7 @@ export class AprofileComponent implements OnInit {
       console.log({res});
       if(res.success){
         this.data=res.data
-      }
-      
+      }    
     })
   }
-
 }

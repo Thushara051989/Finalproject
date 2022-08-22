@@ -6,8 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ExamService {
 
-  constructor(private http:HttpClient) { }
-  getQuestjson(){
+  constructor(private http: HttpClient) { }
+
+  getQuestjson() {
     return this.http.get<any>("assets/q.json")
   }
 }

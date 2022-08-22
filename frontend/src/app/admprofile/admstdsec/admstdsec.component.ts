@@ -13,6 +13,7 @@ export class AdmstdsecComponent implements OnInit {
   studentArray:any=[]
   totalRecords:any
   page:number=1
+  
   constructor(private studentservice:StudentService,private router:Router) { }
 
   ngOnInit() {
@@ -20,26 +21,21 @@ export class AdmstdsecComponent implements OnInit {
       console.log(res);
       this.studentArray=res.item
       this.totalRecords=this.studentArray.item.length
-      
     })
-
 }
 
 removeStd(id:any){
   if(confirm('are you sure want to delete?')){
     this.studentservice.deleteStudent(id).subscribe((res:any)=>{
       if(res.success===1){
-  
         this.ngOnInit()
-  
       }
     })
-
   }
 }
+
 logout(){
   localStorage.clear()
   this.router.navigate(['/'])
 }
-
 }

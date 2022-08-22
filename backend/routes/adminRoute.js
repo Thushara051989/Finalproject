@@ -3,37 +3,30 @@ const router = express.Router()
 const adminModel = require('../src/model/adminModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const checkAuth=require('../middleware/check_admAuth')
+const checkAuth = require('../middleware/check_admAuth')
 
 
-router.post('/signUp',(req, res) => {
-
+router.post('/signUp', (req, res) => {
     console.log('body', req.body);
-
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
-
     bcrypt.hash(req.body.password, 10, (err, hash) => {
         if (err) {
             return res.json({
-
                 success: 0,
                 message: 'Hashing iss'
-
             })
         }
         else {
             const adminMod = new adminModel({
-                email:req.body.email,
+                email: req.body.email,
                 password: hash
             })
             adminMod.save()
                 .then((_) => {
                     res.json({
-
                         success: 1,
                         message: ' Account created successfully'
-
                     })
                 })
                 .catch((err) => {
@@ -47,16 +40,13 @@ router.post('/signUp',(req, res) => {
                         success: 0,
                         message: 'Auth Failed'
                     })
-
                 })
-
         }
     })
 })
 
 
 router.get('/', async (req, res) => {
-
     try {
         res.header("Access-Control-Allow-Origin", "*")
         res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
@@ -75,13 +65,9 @@ router.get('/', async (req, res) => {
     }
 })
 
-
 router.post('/login', (req, res) => {
-
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
-
-
     adminModel.find({ email: req.body.data.email })
         .exec()
         .then((result) => {
@@ -109,11 +95,7 @@ router.post('/login', (req, res) => {
                         success: 0,
                         message: 'wrong password '
                     })
-
-
                 }
-
-
             })
         })
         .catch((err) => {
@@ -124,30 +106,24 @@ router.post('/login', (req, res) => {
         })
 })
 
- router.get('/profile',checkAuth,(req,res)=>{
-
+router.get('/profile', checkAuth, (req, res) => {
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
-
-    const userId=req.userData.userId
+    const userId = req.userData.userId
     adminModel.findById(userId)
-    .exec()
-    .then((result)=>{
-        res.json({
-            success:1,
-            data:result
+        .exec()
+        .then((result) => {
+            res.json({
+                success: 1,
+                data: result
+            })
         })
-    })
-    .catch(err=>{
-        res.json({
-            success:0,
-            message:'server error'
+        .catch(err => {
+            res.json({
+                success: 0,
+                message: 'server error'
+            })
         })
-    })
-
-
- 
 })
-
 
 module.exports = router

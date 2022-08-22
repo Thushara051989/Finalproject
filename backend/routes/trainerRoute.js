@@ -8,19 +8,14 @@ const mongoose = require('mongoose')
 
 
 router.post('/signUp', (req, res) => {
-
     console.log('body', req.body);
-
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
-
     bcrypt.hash(req.body.data.password, 10, (err, hash) => {
         if (err) {
             return res.json({
-
                 success: 0,
                 message: 'Hashing issue'
-
             })
         }
         else {
@@ -34,10 +29,8 @@ router.post('/signUp', (req, res) => {
             trainerMod.save()
                 .then((_) => {
                     res.json({
-
                         success: 1,
                         message: 'Trainer Account create successfully'
-
                     })
                 })
                 .catch((err) => {
@@ -51,16 +44,12 @@ router.post('/signUp', (req, res) => {
                         success: 0,
                         message: 'Auth Failed'
                     })
-
                 })
-
         }
     })
 })
 
-
 router.get('/', async (req, res) => {
-
     try {
         res.header("Access-Control-Allow-Origin", "*")
         res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
@@ -79,13 +68,9 @@ router.get('/', async (req, res) => {
     }
 })
 
-
 router.post('/login', (req, res) => {
-
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
-
-
     trainerModel.find({ email: req.body.data.email })
         .exec()
         .then((result) => {
@@ -113,11 +98,7 @@ router.post('/login', (req, res) => {
                         success: 0,
                         message: ' wrong password '
                     })
-
-
                 }
-
-
             })
         })
         .catch((err) => {
@@ -128,12 +109,9 @@ router.post('/login', (req, res) => {
         })
 })
 
-
 router.get('/profile', checkAuth, (req, res) => {
-
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE")
-
     const userId = req.userData.userId
     trainerModel.findById(userId)
         .exec()
@@ -151,42 +129,35 @@ router.get('/profile', checkAuth, (req, res) => {
         })
 })
 
-router.get('/:id',async(req,res)=>{
-    let id=req.params.id
-
-    let ValidId=mongoose.Types.ObjectId.isValid(id)
-    if(ValidId){
-        try{
-
-            let singleTrainer=await trainerModel.findById({_id:id})
+router.get('/:id', async (req, res) => {
+    let id = req.params.id
+    let ValidId = mongoose.Types.ObjectId.isValid(id)
+    if (ValidId) {
+        try {
+            let singleTrainer = await trainerModel.findById({ _id: id })
             res.json({
-                success:1,
-                message:'single student listed',
-                item:singleTrainer
+                success: 1,
+                message: 'single student listed',
+                item: singleTrainer
             })
-
-
         }
-        catch(err){
+        catch (err) {
             res.json({
-                            success:0,
-                            message:'error occured while listing single student'+err
-                    })
+                success: 0,
+                message: 'error occured while listing single student' + err
+            })
         }
-
     }
-    else{
+    else {
         res.json({
-            success:0,
-            message:'invalid id'
+            success: 0,
+            message: 'invalid id'
         })
-
     }
 })
 
 router.delete('/:id', async (req, res) => {
     let id = req.params.id
-
     let validId = mongoose.Types.ObjectId.isValid(id)
     if (validId) {
         try {
@@ -197,15 +168,12 @@ router.delete('/:id', async (req, res) => {
             })
         }
         catch (err) {
-
             res.json({
                 success: 0,
                 message: 'error occured while removing' + err
             })
-
         }
     }
 })
-
 
 module.exports = router

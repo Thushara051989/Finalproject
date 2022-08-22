@@ -1,12 +1,13 @@
-.form{
-    text-align: center; 
+.form {
+    text-align: center;
     background-color: whitesmoke;
     height: max-content;
-    width:500px;
+    width: 500px;
     border-radius: 2%;
     padding: 1em 1em;
     margin: auto;
 }
-.form-group{
+
+.form-group {
     padding: 2%;
 }

@@ -9,16 +9,16 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class SdashboardComponent implements OnInit {
 
-  data=<any>''
-  constructor(private auth:AuthService) { }
+  data = <any>''
+  
+  constructor(private auth: AuthService) { }
 
-  ngOnInit(){
-    this.auth.getProfile().subscribe(res=>{
-      console.log({res});
-      if(res.success){
-        this.data=res.data
+  ngOnInit() {
+    this.auth.getProfile().subscribe(res => {
+      console.log({ res });
+      if (res.success) {
+        this.data = res.data
       }
-      
     })
   }
 

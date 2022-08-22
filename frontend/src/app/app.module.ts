@@ -19,22 +19,16 @@ import { AuthService } from './service/auth.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-import { CoursesComponent } from './courses/courses.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SdashboardComponent } from './profile/sdashboard/sdashboard.component';
 import { SprofileComponent } from './profile/sprofile/sprofile.component';
-import { SmessagesComponent } from './profile/smessages/smessages.component';
-import { SsettingsComponent } from './profile/ssettings/ssettings.component';
-import { SgradeComponent } from './profile/sgrade/sgrade.component';
 import { AdmprofileComponent } from './admprofile/admprofile.component';
 import { TrnprofileComponent } from './trnprofile/trnprofile.component';
 import { CourseService } from './service/course.service';
 import { AdmtrnsecComponent } from './admprofile/admtrnsec/admtrnsec.component';
 import { AdmstdsecComponent } from './admprofile/admstdsec/admstdsec.component';
 import { AdmcrssecComponent } from './admprofile/admcrssec/admcrssec.component';
-import { TcourseComponent } from './trnprofile/tcourse/tcourse.component';
 import { TstudentComponent } from './trnprofile/tstudent/tstudent.component';
 import { SassignmentsComponent } from './profile/sassignments/sassignments.component';
 import { SexamsComponent } from './profile/sexams/sexams.component';
@@ -45,19 +39,14 @@ import { AddtrainerComponent } from './admprofile/admtrnsec/addtrainer/addtraine
 import { ScoursesComponent } from './profile/scourses/scourses.component';
 import { TprofileComponent } from './trnprofile/tprofile/tprofile.component';
 import { AprofileComponent } from './admprofile/aprofile/aprofile.component';
-import { ThomeComponent } from './trnprofile/thome/thome.component';
 import { TcontentComponent } from './trnprofile/tcontent/tcontent.component';
 import { TfeedbackComponent } from './trnprofile/tfeedback/tfeedback.component';
-
-import { AssignmentComponent } from './trnprofile/tcourse/assignment/assignment.component';
+import { AssignmentComponent } from './trnprofile/assignment/assignment.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { FileService } from './service/file.service';
-
 import { ExamComponent } from './profile/sexams/exam/exam.component';
 import { ExamsDirective } from './profile/sexams/exam/exams.directive';
-
 import { NgxPaginationModule } from 'ngx-pagination';
-
 
 @NgModule({
   declarations: [
@@ -66,20 +55,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
     LoginComponent,
     SignUpComponent,
     FooterComponent,
-    HeaderComponent,
-    CoursesComponent,
     ProfileComponent,
     SdashboardComponent,
     SprofileComponent,
-    SmessagesComponent,
-    SsettingsComponent,
-    SgradeComponent,
     AdmprofileComponent,
     TrnprofileComponent,
     AdmtrnsecComponent,
     AdmstdsecComponent,
     AdmcrssecComponent,
-    TcourseComponent,
     TstudentComponent,
     SassignmentsComponent,
     SexamsComponent,
@@ -90,7 +73,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ScoursesComponent,
     TprofileComponent,
     AprofileComponent,
-    ThomeComponent,
     TcontentComponent,
     TfeedbackComponent,
     AssignmentComponent,
@@ -116,9 +98,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgbModule,
     FileUploadModule,
     NgxPaginationModule
-
   ],
-  
   providers: [AuthService,CourseService,FileService],
   bootstrap: [AppComponent]
 })

@@ -12,10 +12,6 @@ import { AuthService } from '../service/auth.service';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router, private toast: ToastrService) { }
-
-  ngOnInit() {
-  }
   signHide = true
   signSubmit = true
   submitted = false
@@ -25,16 +21,12 @@ export class SignUpComponent implements OnInit {
     { name: 'Mern Stack' },
   ]
   isProcessing = false
-  
 
   get signControls() {
     return this.signUpForm.controls
   }
 
-
-
   signUpForm = this.fb.group({
-
     firstname: ['', Validators.required],
     lastname: ['', Validators.required],
     email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9,%+]+@[a-z0-9.-]+\.[a-z]{2,4}$')]],
@@ -48,58 +40,38 @@ export class SignUpComponent implements OnInit {
           console.log('hello');
           this.signUpForm.controls.ConfirmPass.setErrors({ passMisMatch: true })
         }
-        // console.log('hello');
-
       }
     }
   )
 
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router, private toast: ToastrService) { }
+
+  ngOnInit() {
+  }
 
   onSign() {
-
     this.isProcessing = true
     const formData = this.signUpForm.value
-
-
     this.auth.postStudent(formData).subscribe((res) => {
       console.log(res);
       if (res.success) {
-
         this.isProcessing = false
         this.toast.success('Registration  SuccessFull', 'Success')
-
-        this.auth.sendMail('http://localhost:3000/mail',formData).subscribe(
-        data=>{
-          let res:any=data
-          console.log(`${formData.firstname} is successfully registered`);
-          
-        }
-      )
-
-        
-
+        this.auth.sendMail('http://localhost:3000/mail', formData).subscribe(
+          data => {
+            let res: any = data
+            console.log(`${formData.firstname} is successfully registered`);
+          }
+        )
         this.router.navigate(['/login'])
       }
       else {
-
         if (this.submitted = true) {
           this.isProcessing = false
-
           this.toast.error(res.message, 'Failed')
         }
-
-
       }
     }
-
     )
-
-
   }
-
-  
-
-
-
-
 }
